@@ -792,6 +792,40 @@
       .char-grid { grid-template-columns: repeat(2, 1fr); }
       .video-grid { grid-template-columns: 1fr; }
       .quest-board { padding: 40px 24px; }
+
+      /* ===== モバイル改行修正 ===== */
+      /* <br>タグをモバイルで非表示にして変な改行を防ぐ */
+      .hero-copy br,
+      .section-desc br,
+      .papa-banner br,
+      .video-soon-text br,
+      footer p br { display: none; }
+
+      /* ===== 資産トラッカー モバイル簡略化 ===== */
+      .asset-tracker {
+        padding: 8px 16px;
+        gap: 8px;
+        flex-wrap: nowrap;
+      }
+      .asset-right { display: none; }
+      .asset-usd { display: none; }
+      .asset-amount { font-size: 1.1rem; }
+      .asset-label { font-size: 0.6rem; }
+      .asset-updated { display: none; }
+
+      /* ===== サブチャンネルグリッド 縦並び ===== */
+      .sub-grid { grid-template-columns: 1fr !important; }
+
+      /* ===== パパ紹介バナー 縦並び ===== */
+      .papa-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px !important;
+      }
+
+      /* ===== セクション余白調整 ===== */
+      section { padding: 60px 16px; }
+      .quest-board { padding: 32px 16px; }
     }
   </style>
 </head>
@@ -935,7 +969,7 @@
       <h2 class="section-title">お金の経営学</h2>
 
       <!-- パパ紹介バナー -->
-      <div style="display:flex; align-items:center; gap:20px; background:rgba(255,255,255,0.06); border:1px solid rgba(201,168,76,0.35); border-radius:16px; padding:24px 32px; max-width:720px; margin:0 auto 48px; text-align:left;">
+      <div class="papa-banner" style="display:flex; align-items:center; gap:20px; background:rgba(255,255,255,0.06); border:1px solid rgba(201,168,76,0.35); border-radius:16px; padding:24px 32px; max-width:720px; margin:0 auto 48px; text-align:left;">
         <img src="characters/papa.png" alt="パパ" style="height:100px; filter:drop-shadow(0 4px 12px rgba(0,0,0,0.4));">
         <div>
           <div style="font-size:0.7rem; font-weight:700; letter-spacing:0.15em; color:var(--gold); margin-bottom:8px;">💼 サラリーマン経営学者 パパ が解説</div>
@@ -1085,7 +1119,7 @@
       <div style="max-width:680px; margin:0 auto; background:rgba(201,168,76,0.08); border:2px dashed rgba(201,168,76,0.4); border-radius:20px; padding:56px 40px; text-align:center;">
         <div style="font-size:3.5rem; margin-bottom:20px;">⚔️</div>
         <h3 style="font-family:'Noto Serif JP',serif; font-size:1.5rem; color:var(--gold); margin-bottom:16px;">冒険、まもなく開幕。</h3>
-        <p style="color:rgba(255,255,255,0.65); font-size:0.95rem; line-height:1.9; margin-bottom:28px;">
+        <p class="video-soon-text" style="color:rgba(255,255,255,0.65); font-size:0.95rem; line-height:1.9; margin-bottom:28px;">
           ミリオンクエストは現在チャンネル開設準備中です。<br>
           チャンネル登録しておくと、冒険の始まりを見逃しません。
         </p>
@@ -1109,7 +1143,7 @@
         単身赴任・晩酌・サラリーマンの本音を、ゆるく発信しています。
       </p>
 
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; max-width:800px; margin:0 auto;">
+      <div class="sub-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:24px; max-width:800px; margin:0 auto;">
         <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(201,168,76,0.25); border-radius:16px; padding:32px 24px; text-align:center;">
           <div style="font-size:3rem; margin-bottom:16px;">🏠</div>
           <h3 style="color:var(--gold); font-family:'Noto Serif JP',serif; font-size:1.1rem; margin-bottom:12px;">単身赴任日記</h3>
