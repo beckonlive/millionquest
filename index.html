@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ミリオンクエスト | 普通家庭が1億円（100万ドル）を目指すリアル冒険</title>
+  <meta name="description" content="普通の家族4人が、お金の経営学で資産1億円（$1Million）を目指すリアル冒険。経営・ビジネス・マネーを楽しく学べるYouTubeチャンネル「ミリオンクエスト」公式サイト。">
+  <link rel="icon" href="logo2.png">
+  <!-- OGP -->
+  <meta property="og:title" content="ミリオンクエスト | 普通家庭が1億円を目指すリアル冒険">
+  <meta property="og:description" content="年収400〜500万円の平均サラリーマンが、YouTube収益に頼らず$1Millionを目指す。お金の経営学で資産を積み上げる、再現性のある冒険チャンネル。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://millionquest.jp/">
+  <meta property="og:image" content="https://millionquest.jp/thumbnail.png">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="720">
+  <meta property="og:site_name" content="ミリオンクエスト">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ミリオンクエスト | 普通家庭が1億円を目指すリアル冒険">
+  <meta name="twitter:description" content="年収400〜500万円の平均サラリーマンが、YouTube収益に頼らず$1Millionを目指す再現性のある冒険チャンネル。">
+  <meta name="twitter:image" content="https://millionquest.jp/thumbnail.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1a2456;
+      --navy-dark: #0f1535;
+      --gold: #c9a84c;
+      --gold-light: #f0d080;
+      --red: #c0392b;
+      --red-bright: #e74c3c;
+      --cream: #f8f3e8;
+      --cream-dark: #ede4d0;
+      --white: #ffffff;
+      --text-dark: #1a1a2e;
+      --text-mid: #4a4a6a;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background-color: var(--cream);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    /* ========== ASSET TRACKER ========== */
+    .asset-tracker {
+      background: #0a0e1f;
+      border-bottom: 2px solid var(--gold);
+      padding: 12px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .asset-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .asset-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.5);
+      white-space: nowrap;
+    }
+
+    .asset-amount {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--gold);
+      letter-spacing: 0.05em;
+    }
+
+    .asset-amount .currency {
+      font-size: 0.9rem;
+      color: rgba(201,168,76,0.7);
+      margin-right: 4px;
+    }
+
+    .asset-usd {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+      margin-left: 8px;
+    }
+
+    .asset-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex: 1;
+      max-width: 600px;
+    }
+
+    .progress-wrap { flex: 1; }
+
+    .progress-labels {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+    }
+
+    .progress-labels span {
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.05em;
+    }
+
+    .progress-labels .goal {
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .progress-bar {
+      background: rgba(255,255,255,0.1);
+      border-radius: 99px;
+      height: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(201,168,76,0.2);
+    }
+
+    .progress-fill {
+      height: 100%;
+      border-radius: 99px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      position: relative;
+      transition: width 1s ease;
+    }
+
+    .progress-fill::after {
+      content: '';
+      position: absolute;
+      right: 0; top: 0; bottom: 0;
+      width: 12px;
+      background: white;
+      border-radius: 99px;
+      opacity: 0.6;
+    }
+
+    .progress-pct {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--gold);
+      white-space: nowrap;
+    }
+
+    .asset-updated {
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.3);
+      white-space: nowrap;
+    }
+
+    /* ========== HEADER ========== */
+    header {
+      background: var(--navy-dark);
+      border-bottom: 3px solid var(--gold);
+      padding: 16px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 72px;
+      width: auto;
+      mix-blend-mode: screen;
+    }
+
+    nav a {
+      color: var(--cream);
+      text-decoration: none;
+      margin-left: 32px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: var(--gold); }
+
+    /* ========== HERO ========== */
+    .hero {
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 50%, #2a3a7a 100%);
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a84c' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--red);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 6px 20px;
+      border-radius: 20px;
+      letter-spacing: 0.15em;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1.1;
+      margin-bottom: 8px;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 3vw, 1.4rem);
+      color: var(--cream);
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+
+    .hero-copy {
+      font-size: clamp(0.9rem, 2vw, 1.05rem);
+      color: rgba(255,255,255,0.75);
+      max-width: 800px;
+      margin: 0 auto 40px;
+      line-height: 2.2;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 900px) {
+      .hero-copy { white-space: normal; }
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--red);
+      color: white;
+      padding: 16px 36px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      border: 2px solid var(--red-bright);
+      transition: all 0.2s;
+      letter-spacing: 0.05em;
+    }
+
+    .btn-primary:hover {
+      background: var(--red-bright);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--gold);
+      padding: 16px 36px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      border: 2px solid var(--gold);
+      transition: all 0.2s;
+      letter-spacing: 0.05em;
+    }
+
+    .btn-secondary:hover {
+      background: var(--gold);
+      color: var(--navy-dark);
+      transform: translateY(-2px);
+    }
+
+    /* ヒーローサムネイル */
+    .hero-thumbnail {
+      margin-top: 48px;
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 1200px;
+      padding: 0 20px;
+    }
+
+    .hero-thumbnail img {
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 16px 64px rgba(0,0,0,0.6), 0 0 0 2px rgba(201,168,76,0.3);
+      transition: transform 0.3s;
+      display: block;
+    }
+
+    .hero-thumbnail img:hover { transform: scale(1.02); }
+
+    /* ========== SECTION COMMON ========== */
+    section { padding: 80px 20px; }
+
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 900;
+      text-align: center;
+      color: var(--navy-dark);
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+
+    .section-desc {
+      text-align: center;
+      color: var(--text-mid);
+      line-height: 1.9;
+      max-width: 640px;
+      margin: 0 auto 56px;
+      font-size: 0.95rem;
+    }
+
+    /* ========== ABOUT ========== */
+    .about { background: var(--white); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .about-text h3 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 16px;
+      border-left: 4px solid var(--gold);
+      padding-left: 16px;
+    }
+
+    .about-text p {
+      color: var(--text-mid);
+      line-height: 1.9;
+      margin-bottom: 16px;
+      font-size: 0.95rem;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .stat-card {
+      background: var(--cream);
+      border: 2px solid var(--cream-dark);
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .stat-card .num {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--navy);
+    }
+
+    .stat-card .num span { color: var(--red); font-size: 1.2rem; }
+    .stat-card p { font-size: 0.8rem; color: var(--text-mid); margin-top: 4px; }
+
+    /* ========== お金の経営学 ========== */
+    .money-section {
+      background: linear-gradient(135deg, var(--navy-dark), var(--navy));
+      color: white;
+    }
+
+    .money-section .section-title { color: var(--gold); }
+    .money-section .section-desc { color: rgba(255,255,255,0.75); }
+
+    .money-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .money-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    .money-card:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: var(--gold);
+      transform: translateY(-4px);
+    }
+
+    .money-card .icon {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+    }
+
+    .money-card h3 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .money-card p {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.8;
+    }
+
+    /* ========== CHARACTERS ========== */
+    .characters { background: var(--cream); }
+
+    .char-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .char-card {
+      background: white;
+      border-radius: 16px;
+      padding: 32px 20px 24px;
+      text-align: center;
+      border: 2px solid var(--cream-dark);
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .char-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--navy), var(--gold));
+    }
+
+    .char-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+    }
+
+    .char-card img {
+      height: 160px;
+      margin-bottom: 16px;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15));
+    }
+
+    .char-card .role {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      background: var(--navy);
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .char-level {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin: 12px 0 8px;
+    }
+
+    .level-badge {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--navy-dark);
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.7rem;
+      font-weight: 900;
+      padding: 3px 10px;
+      border-radius: 6px;
+      letter-spacing: 0.05em;
+    }
+
+    .level-num {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1;
+    }
+
+    .level-unit {
+      font-size: 0.7rem;
+      color: var(--text-mid);
+      margin-top: 4px;
+    }
+
+    .level-bar-wrap {
+      margin: 6px 12px 0;
+    }
+
+    .level-bar {
+      background: var(--cream-dark);
+      border-radius: 99px;
+      height: 6px;
+      overflow: hidden;
+    }
+
+    .level-bar-fill {
+      height: 100%;
+      border-radius: 99px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    }
+
+    .level-bar-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.65rem;
+      color: #aaa;
+      margin-top: 4px;
+    }
+
+    .char-card h3 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .char-card p {
+      font-size: 0.8rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+
+    /* ========== VIDEOS ========== */
+    .videos { background: white; }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .video-card {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 2px solid var(--cream-dark);
+      transition: all 0.3s;
+    }
+
+    .video-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    }
+
+    .video-thumb {
+      background: linear-gradient(135deg, var(--navy), #2a3a7a);
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+    }
+
+    .video-info { padding: 20px; }
+
+    .video-info .tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--red);
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+    }
+
+    .video-info h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.5;
+    }
+
+    /* ========== QUEST BOARD ========== */
+    .quest { background: var(--cream); }
+
+    .quest-board {
+      background: white;
+      border: 3px solid var(--gold);
+      border-radius: 16px;
+      padding: 48px;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+    }
+
+    .quest-board::before {
+      content: '📜 クエスト掲示板';
+      position: absolute;
+      top: -16px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold);
+      color: var(--navy-dark);
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 6px 24px;
+      border-radius: 20px;
+      letter-spacing: 0.1em;
+    }
+
+    .quest-list {
+      list-style: none;
+      text-align: left;
+      margin: 24px 0 32px;
+    }
+
+    .quest-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 0;
+      border-bottom: 1px dashed var(--cream-dark);
+      font-size: 0.95rem;
+      color: var(--text-dark);
+    }
+
+    .quest-list li .q-icon { font-size: 1.5rem; }
+
+    .quest-list li .q-status {
+      margin-left: auto;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 12px;
+    }
+
+    .q-status.ongoing { background: #e8f5e9; color: #2e7d32; }
+    .q-status.todo { background: #fff3e0; color: #e65100; }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background: var(--navy-dark);
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      padding: 48px 20px;
+      border-top: 3px solid var(--gold);
+    }
+
+    footer .footer-logo {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    footer p { font-size: 0.85rem; line-height: 1.8; margin-bottom: 24px; }
+
+    footer .footer-links { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
+    footer .footer-links a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; }
+    footer .footer-links a:hover { color: var(--gold); }
+
+    footer .copyright { margin-top: 32px; font-size: 0.75rem; }
+
+    /* ========== DIVIDER ========== */
+    .divider {
+      text-align: center;
+      padding: 8px 0;
+      color: var(--gold);
+      font-size: 1.2rem;
+      letter-spacing: 0.5em;
+    }
+
+    /* ========== HAMBURGER MENU ========== */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 36px;
+      height: 36px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+      z-index: 200;
+    }
+
+    .hamburger span {
+      display: block;
+      height: 2px;
+      background: var(--gold);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background: var(--navy-dark);
+      border-bottom: 3px solid var(--gold);
+      padding: 0;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+
+    .mobile-nav.open {
+      max-height: 400px;
+      padding: 8px 0 16px;
+    }
+
+    .mobile-nav a {
+      display: block;
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      padding: 14px 28px;
+      font-size: 1rem;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      transition: color 0.2s, background 0.2s;
+    }
+
+    .mobile-nav a:hover {
+      color: var(--gold);
+      background: rgba(201,168,76,0.07);
+    }
+
+    .mobile-nav a:last-child { border-bottom: none; }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 768px) {
+      header { padding: 12px 20px; }
+      nav { display: none; }
+      .hamburger { display: flex; }
+      .mobile-nav { display: flex; }
+      .about-grid { grid-template-columns: 1fr; }
+      .money-grid { grid-template-columns: 1fr; }
+      .char-grid { grid-template-columns: repeat(2, 1fr); }
+      .video-grid { grid-template-columns: 1fr; }
+      .quest-board { padding: 40px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ASSET TRACKER -->
+  <div class="asset-tracker">
+    <div class="asset-left">
+      <span class="asset-label">💰 現在の資産</span>
+      <div class="asset-amount">
+        <span class="currency">¥</span><span id="assetJpy">0</span>
+        <span class="asset-usd" id="assetUsd">（$0）</span>
+      </div>
+    </div>
+
+    <div class="asset-right">
+      <div class="progress-wrap">
+        <div class="progress-labels">
+          <span>¥0</span>
+          <span class="goal">🏆 目標：¥100,000,000（$1Million）</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+        </div>
+      </div>
+      <div class="progress-pct" id="progressPct">0%</div>
+    </div>
+
+    <span class="asset-updated" id="assetUpdated">更新中...</span>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <a href="#" class="logo">
+      <img src="logo2.png" alt="ミリオンクエスト MILLION QUEST">
+    </a>
+    <nav>
+      <a href="#about">チャンネルとは</a>
+      <a href="#money">お金の経営学</a>
+      <a href="#characters">冒険者</a>
+      <a href="#videos">動画</a>
+      <a href="#quest">クエスト</a>
+      <a href="#subchannel">パパのサブch</a>
+      <a href="blog.html">ブログ</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <!-- モバイルナビ -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#about" class="mobile-nav-link">⚔️　チャンネルとは</a>
+    <a href="#money" class="mobile-nav-link">📊　お金の経営学</a>
+    <a href="#characters" class="mobile-nav-link">👥　冒険者たち</a>
+    <a href="#videos" class="mobile-nav-link">▶　動画</a>
+    <a href="#quest" class="mobile-nav-link">🗺️　クエスト</a>
+    <a href="#subchannel" class="mobile-nav-link">🍺　パパのサブch</a>
+    <a href="blog.html">📝　ブログ</a>
+    <a href="contact.html">✉️　お問い合わせ</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div style="position:relative; z-index:1;">
+      <div class="hero-badge">⚔️ 年収400〜500万円の平均サラリーマンが $1Million を目指す</div>
+      <p class="hero-sub">普通家庭が、資産１億円（$1Million）を目指す冒険。</p>
+      <p class="hero-copy">
+        4人家族が「お金の経営学」を武器に、資産１億円（$1Million）を本気で目指す。<br>
+        経営・ビジネス・お金の知識を、楽しく・わかりやすく・使える形で届ける。<br>
+        これは勉強ではなく、リアルな冒険だ。
+      </p>
+      <div class="hero-buttons">
+        <a href="#" data-yt="main" class="btn-primary">▶ チャンネルを見る</a>
+        <a href="#about" class="btn-secondary">冒険について知る</a>
+      </div>
+
+      <!-- メインビジュアル -->
+      <div class="hero-thumbnail">
+        <img src="thumbnail.png" alt="ミリオンクエスト - 家族4人の冒険">
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="section-inner">
+      <p class="section-label">ABOUT</p>
+      <h2 class="section-title">ミリオンクエストとは</h2>
+      <p class="section-desc">
+        普通の家族4人が、経営とお金の知識を武器に、資産１億円（$1Million）を本気で目指す。<br>
+        これはリアルな冒険の記録です。
+      </p>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <h3>ミリオンクエストが大切にしていること</h3>
+          <p>
+            「成功した人の話」は参考になる。でも、<strong>自分に再現できるか</strong>はまた別の話。
+          </p>
+          <p>
+            だからミリオンクエストは、<strong>パパの年収400〜500万円（日本の平均水準）から出発する。</strong>YouTube収益は資産にカウントしない。副業（講演・非常勤講師）と経営学的思考で、普通の家庭が$1Millionを目指すリアルをそのまま届ける。
+          </p>
+          <p>
+            「戦っている最中」を発信する。だから、<strong>これはあなたにも再現できる冒険</strong>だ。
+          </p>
+          <br>
+          <a href="#" data-yt="main" class="btn-primary" style="display:inline-block; font-size:0.9rem; padding:12px 28px;">
+            ▶ チャンネル登録する
+          </a>
+        </div>
+
+        <div class="about-stats">
+          <div class="stat-card">
+            <div class="num">400<span>〜500万</span></div>
+            <p>パパの年収（日本平均水準）</p>
+          </div>
+          <div class="stat-card">
+            <div class="num">$1<span>M</span></div>
+            <p>YouTube収益ゼロで目指す</p>
+          </div>
+          <div class="stat-card">
+            <div class="num">4<span>人</span></div>
+            <p>普通の家族で挑戦中</p>
+          </div>
+          <div class="stat-card">
+            <div class="num">130<span>万円</span></div>
+            <p>ママの年収（社会保険扶養内）</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- お金の経営学 -->
+  <section class="money-section" id="money">
+    <div class="section-inner">
+      <p class="section-label">PAPA'S SERIES</p>
+      <h2 class="section-title">お金の経営学</h2>
+
+      <!-- パパ紹介バナー -->
+      <div style="display:flex; align-items:center; gap:20px; background:rgba(255,255,255,0.06); border:1px solid rgba(201,168,76,0.35); border-radius:16px; padding:24px 32px; max-width:720px; margin:0 auto 48px; text-align:left;">
+        <img src="characters/papa.png" alt="パパ" style="height:100px; filter:drop-shadow(0 4px 12px rgba(0,0,0,0.4));">
+        <div>
+          <div style="font-size:0.7rem; font-weight:700; letter-spacing:0.15em; color:var(--gold); margin-bottom:8px;">💼 サラリーマン経営学者 パパ が解説</div>
+          <p style="color:rgba(255,255,255,0.85); font-size:0.95rem; line-height:1.85;">
+            「お金の経営学」は、パパが経営学の理論を<br>
+            <strong style="color:var(--gold);">お金と日常生活</strong>に落とし込んで解説するオリジナルシリーズ。<br>
+            難しい経営学を、誰もが使える「生活の武器」に変える。
+          </p>
+        </div>
+      </div>
+
+      <div class="money-grid">
+        <div class="money-card">
+          <div class="icon">🏠</div>
+          <h3>家計を経営する</h3>
+          <p>
+            家庭のお金を「経営」の視点で管理する。収支・固定費・投資の三角形。経営学が教える家計改善の本質。
+          </p>
+        </div>
+        <div class="money-card">
+          <div class="icon">📊</div>
+          <h3>財務諸表で自分を分析する</h3>
+          <p>
+            BS・PL・CFは会社だけのものじゃない。自分の資産・収入・お金の流れを経営学の言葉で読み解く。
+          </p>
+        </div>
+        <div class="money-card">
+          <div class="icon">💡</div>
+          <h3>日常の出費に戦略を持つ</h3>
+          <p>
+            なぜ節約は続かないのか。経営学の「コスト戦略」を日常に応用する。賢い消費者になるための経営思考。
+          </p>
+        </div>
+        <div class="money-card">
+          <div class="icon">📈</div>
+          <h3>お金を「投資」として考える</h3>
+          <p>
+            経費と投資の違い。時間・お金・労力をどこに投じるか。経営学のROI（投資対効果）を人生に使う方法。
+          </p>
+        </div>
+        <div class="money-card">
+          <div class="icon">🗺️</div>
+          <h3>資産形成を事業計画で考える</h3>
+          <p>
+            1億円への道を「事業計画」として設計する。KPI・マイルストーン・リスク管理。人生を経営する視点。
+          </p>
+        </div>
+        <div class="money-card">
+          <div class="icon">⚔️</div>
+          <h3>サラリーマンの経営戦略</h3>
+          <p>
+            雇われながら資産を築く。副業・複業・転職・昇給交渉を「経営戦略」として考えるとすべてが変わる。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHARACTERS -->
+  <section class="characters" id="characters">
+    <div class="section-inner">
+      <p class="section-label">CHARACTERS</p>
+      <h2 class="section-title">冒険者たち</h2>
+      <p class="section-desc">
+        ミリオンクエストに挑む4人家族を紹介します。それぞれが異なる役割で、$1Millionへの旅を進めています。
+      </p>
+
+      <div class="char-grid">
+        <div class="char-card">
+          <img src="characters/papa.png" alt="パパ（勇者）">
+          <div class="role">サラリーマン・経営学者</div>
+          <h3>パパ</h3>
+          <div class="char-level">
+            <div>
+              <div class="level-badge">LEVEL</div>
+            </div>
+            <div class="level-num">63.2</div>
+          </div>
+          <div class="level-bar-wrap">
+            <div class="level-bar"><div class="level-bar-fill" style="width:20%"></div></div>
+            <div class="level-bar-label"><span>Lv.63</span><span>次：Lv.64（¥100万）</span></div>
+          </div>
+          <p style="margin-top:12px;">40代。本業はサラリーマン、副業として講演活動・非常勤講師を務める経営学者。学術的な経営学を「お金と日常」に落とし込み、誰でも使える知識として発信する。趣味はお酒。単身赴任中。</p>
+        </div>
+        <div class="char-card">
+          <img src="characters/mama.png" alt="ママ（賢者）">
+          <div class="role">パート主婦・扶養内</div>
+          <h3>ママ</h3>
+          <div class="char-level">
+            <div>
+              <div class="level-badge">LEVEL</div>
+            </div>
+            <div class="level-num">16.2</div>
+          </div>
+          <div class="level-bar-wrap">
+            <div class="level-bar"><div class="level-bar-fill" style="width:20%"></div></div>
+            <div class="level-bar-label"><span>Lv.16</span><span>次：Lv.17（¥100万）</span></div>
+          </div>
+          <p style="margin-top:12px;">40代。扶養内で働きながら家族を支える。「家庭のお金」を経営目線で管理し、節約・投資・資産形成の実践者として家族の財務を守る。</p>
+        </div>
+        <div class="char-card">
+          <img src="characters/sister.png" alt="姉（魔法使い）">
+          <div class="role">私立中学生</div>
+          <h3>姉</h3>
+          <div class="char-level">
+            <div>
+              <div class="level-badge">LEVEL</div>
+            </div>
+            <div class="level-num">2.0</div>
+          </div>
+          <div class="level-bar-wrap">
+            <div class="level-bar"><div class="level-bar-fill" style="width:0%"></div></div>
+            <div class="level-bar-label"><span>Lv.2</span><span>次：Lv.3（¥100万）</span></div>
+          </div>
+          <p style="margin-top:12px;">私立中学生。Z世代の感性でSNSとクリエイティブを担当。「学生目線のお金と経営」を発信しながら、将来の起業を密かに夢見ている。</p>
+        </div>
+        <div class="char-card">
+          <img src="characters/sister2.png" alt="妹（僧侶）">
+          <div class="role">公立小学生</div>
+          <h3>妹</h3>
+          <div class="char-level">
+            <div>
+              <div class="level-badge">LEVEL</div>
+            </div>
+            <div class="level-num">2.0</div>
+          </div>
+          <div class="level-bar-wrap">
+            <div class="level-bar"><div class="level-bar-fill" style="width:0%"></div></div>
+            <div class="level-bar-label"><span>Lv.2</span><span>次：Lv.3（¥100万）</span></div>
+          </div>
+          <p style="margin-top:12px;">公立小学生。「なんで？」が口癖の末っ子。子どもの純粋な疑問がパパの解説をわかりやすくする。チームの癒しにして、最強の質問係。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEOS -->
+  <section class="videos" id="videos">
+    <div class="section-inner">
+      <p class="section-label">VIDEOS</p>
+      <h2 class="section-title">最新の冒険記録</h2>
+      <p class="section-desc">
+        経営・ビジネス・お金の知識を、楽しく使えるレベルで届けます。
+      </p>
+
+      <!-- 準備中バナー -->
+      <div style="max-width:680px; margin:0 auto; background:rgba(201,168,76,0.08); border:2px dashed rgba(201,168,76,0.4); border-radius:20px; padding:56px 40px; text-align:center;">
+        <div style="font-size:3.5rem; margin-bottom:20px;">⚔️</div>
+        <h3 style="font-family:'Noto Serif JP',serif; font-size:1.5rem; color:var(--gold); margin-bottom:16px;">冒険、まもなく開幕。</h3>
+        <p style="color:rgba(255,255,255,0.65); font-size:0.95rem; line-height:1.9; margin-bottom:28px;">
+          ミリオンクエストは現在チャンネル開設準備中です。<br>
+          チャンネル登録しておくと、冒険の始まりを見逃しません。
+        </p>
+        <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+          <a href="#" data-yt="main" class="btn-primary" style="display:inline-block;">▶ チャンネル登録して待つ</a>
+          <a href="blog.html" class="btn-secondary" style="display:inline-block;">📝 ブログを読む</a>
+        </div>
+        <p style="margin-top:24px; font-size:0.78rem; color:rgba(255,255,255,0.35);">※ 公開予定：近日中</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SUB CHANNEL -->
+  <section id="subchannel" style="background: var(--navy-dark); padding: 80px 20px;">
+    <div class="section-inner">
+      <p class="section-label" style="color:var(--gold);">SUB CHANNEL</p>
+      <h2 class="section-title" style="color:var(--white);">パパの個人チャンネル</h2>
+      <p class="section-desc" style="color:rgba(255,255,255,0.65);">
+        ミリオンクエストの表側では語れない、パパのリアルな日常。<br>
+        単身赴任・晩酌・サラリーマンの本音を、ゆるく発信しています。
+      </p>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; max-width:800px; margin:0 auto;">
+        <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(201,168,76,0.25); border-radius:16px; padding:32px 24px; text-align:center;">
+          <div style="font-size:3rem; margin-bottom:16px;">🏠</div>
+          <h3 style="color:var(--gold); font-family:'Noto Serif JP',serif; font-size:1.1rem; margin-bottom:12px;">単身赴任日記</h3>
+          <p style="color:rgba(255,255,255,0.65); font-size:0.875rem; line-height:1.8;">
+            家族と離れて暮らすパパの日常。一人飯・孤独・帰省のリアルをありのままに届ける。
+          </p>
+        </div>
+        <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(201,168,76,0.25); border-radius:16px; padding:32px 24px; text-align:center;">
+          <div style="font-size:3rem; margin-bottom:16px;">🍺</div>
+          <h3 style="color:var(--gold); font-family:'Noto Serif JP',serif; font-size:1.1rem; margin-bottom:12px;">晩酌・お酒トーク</h3>
+          <p style="color:rgba(255,255,255,0.65); font-size:0.875rem; line-height:1.8;">
+            お酒を飲みながら、仕事・人生・お金の本音を語る。ゆるくて正直なパパの素顔。
+          </p>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:40px;">
+        <a href="#" data-yt="sub" class="btn-secondary" style="display:inline-block;">▶ パパの個人チャンネルを見る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUEST BOARD -->
+  <section class="quest" id="quest">
+    <div class="section-inner">
+      <p class="section-label">QUEST</p>
+      <h2 class="section-title">現在進行中のクエスト</h2>
+      <p class="section-desc">
+        ミリオンクエストのリアルな進捗を公開します。$1Millionへの冒険を、一緒に見届けてください。
+      </p>
+
+      <div class="quest-board">
+        <ul class="quest-list">
+          <li>
+            <span class="q-icon">🗺️</span>
+            <div>
+              <strong>チャンネル開設クエスト</strong><br>
+              <small style="color:#888;">ミリオンクエスト、冒険の始まり</small>
+            </div>
+            <span class="q-status ongoing">進行中</span>
+          </li>
+          <li>
+            <span class="q-icon">📹</span>
+            <div>
+              <strong>動画10本投稿クエスト</strong><br>
+              <small style="color:#888;">3ヶ月以内に10本を世に放て</small>
+            </div>
+            <span class="q-status ongoing">進行中</span>
+          </li>
+          <li>
+            <span class="q-icon">👥</span>
+            <div>
+              <strong>登録者1,000人クエスト</strong><br>
+              <small style="color:#888;">収益化への最初の関門を突破せよ</small>
+            </div>
+            <span class="q-status todo">未挑戦</span>
+          </li>
+          <li>
+            <span class="q-icon">💰</span>
+            <div>
+              <strong>資産9,000万円突破クエスト</strong><br>
+              <small style="color:#888;">$1Millionまであと一歩。副業・運用で壁を越えろ</small>
+            </div>
+            <span class="q-status todo">未挑戦</span>
+          </li>
+          <li>
+            <span class="q-icon">👑</span>
+            <div>
+              <strong>資産１億円（$1Million）達成クエスト【最終目標】</strong><br>
+              <small style="color:#888;">ミリオンの称号を手にするまで冒険は終わらない</small>
+            </div>
+            <span class="q-status todo">未挑戦</span>
+          </li>
+        </ul>
+
+        <a href="#" data-yt="main" class="btn-primary">▶ 冒険を一緒に見届ける</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo"><img src="logo2.png" alt="ミリオンクエスト" style="height:100px; mix-blend-mode: screen;"></div>
+    <p>
+      普通家庭のお金の経営学・冒険チャンネル<br>
+      経営・ビジネス・マネーをわかりやすく、楽しく、使える形で届けます。
+    </p>
+    <div class="footer-links">
+      <a href="#" data-yt="main">YouTube</a>
+      <a href="#">X（Twitter）</a>
+      <a href="#">Instagram</a>
+      <a href="contact.html">お問い合わせ</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+    </div>
+    <p class="copyright">© 2026 MillionQuest. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // ============================
+    // YouTubeチャンネルURL設定
+    // チャンネル開設後にここを更新するだけで全リンクが変わります
+    // ============================
+    const YOUTUBE_MAIN_URL    = 'https://www.youtube.com/@millionquest';  // ← メインch URL
+    const YOUTUBE_SUB_URL     = 'https://www.youtube.com/@millionquest';  // ← サブch URL（別途変更）
+
+    document.querySelectorAll('a[data-yt="main"]').forEach(a => a.href = YOUTUBE_MAIN_URL);
+    document.querySelectorAll('a[data-yt="sub"]').forEach(a => a.href = YOUTUBE_SUB_URL);
+
+    // ============================
+    // ハンバーガーメニュー
+    // ============================
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileNav.classList.toggle('open');
+    });
+
+    // リンクをタップしたらメニューを閉じる
+    document.querySelectorAll('.mobile-nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileNav.classList.remove('open');
+      });
+    });
+
+    // ============================
+    // 資産トラッカー設定
+    // ここの数字を更新するだけでHP上の表示が変わります
+    // ============================
+    const CURRENT_ASSET_JPY = 83400000; // ← 現在の資産額（円）をここに入力
+    const GOAL_JPY = 100000000;         // 目標：1億円（変更不要）
+    const USD_RATE = 150;               // 円→ドル換算レート（適宜更新）
+    const LAST_UPDATED = '2026.04.21';  // ← 資産を更新した日付をここに入力
+
+    // 表示処理
+    function formatJpy(n) {
+      return n.toLocaleString('ja-JP');
+    }
+
+    function formatUsd(n) {
+      return Math.floor(n / USD_RATE).toLocaleString('en-US');
+    }
+
+    function updateTracker() {
+      const pct = Math.min((CURRENT_ASSET_JPY / GOAL_JPY) * 100, 100);
+
+      // カウントアップアニメーション
+      let start = 0;
+      const duration = 1500;
+      const step = CURRENT_ASSET_JPY / (duration / 16);
+
+      const timer = setInterval(() => {
+        start += step;
+        if (start >= CURRENT_ASSET_JPY) {
+          start = CURRENT_ASSET_JPY;
+          clearInterval(timer);
+        }
+        document.getElementById('assetJpy').textContent = formatJpy(Math.floor(start));
+        document.getElementById('assetUsd').textContent = `（$${formatUsd(Math.floor(start))}）`;
+      }, 16);
+
+      // プログレスバー
+      setTimeout(() => {
+        document.getElementById('progressFill').style.width = pct.toFixed(2) + '%';
+        document.getElementById('progressPct').textContent = pct.toFixed(1) + '%';
+      }, 200);
+
+      // 更新日時（資産を更新したら上の LAST_UPDATED も変更してください）
+      document.getElementById('assetUpdated').textContent = LAST_UPDATED + ' 更新';
+    }
+
+    window.addEventListener('load', updateTracker);
+  </script>
+
+</body>
+</html>

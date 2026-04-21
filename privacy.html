@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プライバシーポリシー | ミリオンクエスト</title>
+  <meta name="description" content="ミリオンクエスト公式サイトのプライバシーポリシー。個人情報の取り扱い・Cookieの利用について説明しています。">
+  <link rel="icon" href="logo2.png">
+  <!-- OGP -->
+  <meta property="og:title" content="プライバシーポリシー | ミリオンクエスト">
+  <meta property="og:description" content="ミリオンクエスト公式サイトのプライバシーポリシー。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://millionquest.jp/privacy.html">
+  <meta property="og:image" content="https://millionquest.jp/thumbnail.png">
+  <meta property="og:site_name" content="ミリオンクエスト">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1a2456;
+      --navy-dark: #0f1535;
+      --gold: #c9a84c;
+      --red: #c0392b;
+      --cream: #f8f3e8;
+      --cream-dark: #ede4d0;
+      --white: #ffffff;
+      --text-dark: #1a1a2e;
+      --text-mid: #4a4a6a;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Noto Sans JP', sans-serif; background: var(--cream); color: var(--text-dark); }
+
+    /* ヘッダー */
+    header {
+      background: var(--navy-dark);
+      border-bottom: 3px solid var(--gold);
+      padding: 16px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 72px;
+      width: auto;
+      mix-blend-mode: screen;
+    }
+
+    nav a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      margin-left: 28px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--gold); }
+
+    /* ページヒーロー */
+    .page-hero {
+      background: linear-gradient(135deg, var(--navy-dark), var(--navy));
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .page-hero .label {
+      color: var(--gold);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      margin-bottom: 12px;
+    }
+    .page-hero h1 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .page-hero p {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+
+    /* メインコンテンツ */
+    .privacy-container {
+      max-width: 820px;
+      margin: 60px auto;
+      padding: 0 20px 80px;
+    }
+
+    .last-updated {
+      text-align: right;
+      font-size: 0.82rem;
+      color: var(--text-mid);
+      margin-bottom: 32px;
+    }
+
+    .intro-card {
+      background: white;
+      border: 2px solid var(--cream-dark);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-bottom: 40px;
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      line-height: 1.9;
+    }
+
+    /* セクション */
+    .privacy-section {
+      background: white;
+      border: 2px solid var(--cream-dark);
+      border-radius: 12px;
+      padding: 32px 36px;
+      margin-bottom: 20px;
+    }
+
+    .privacy-section h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--navy);
+      border-left: 4px solid var(--gold);
+      padding-left: 14px;
+      margin-bottom: 20px;
+    }
+
+    .privacy-section p {
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      line-height: 1.9;
+      margin-bottom: 12px;
+    }
+
+    .privacy-section p:last-child { margin-bottom: 0; }
+
+    .privacy-section ul, .privacy-section ol {
+      padding-left: 0;
+      list-style: none;
+      margin-bottom: 12px;
+    }
+
+    .privacy-section ul li, .privacy-section ol li {
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      line-height: 1.9;
+      padding-left: 1.2em;
+      position: relative;
+      margin-bottom: 4px;
+    }
+
+    .privacy-section ul li::before {
+      content: "・";
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+    }
+
+    .privacy-section ol {
+      counter-reset: item;
+    }
+
+    .privacy-section ol li::before {
+      counter-increment: item;
+      content: counter(item) ".";
+      position: absolute;
+      left: 0;
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .privacy-section a {
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .highlight-box {
+      background: var(--cream);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-top: 16px;
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      line-height: 1.8;
+    }
+
+    /* フッター */
+    footer {
+      background: var(--navy-dark);
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 3px solid var(--gold);
+    }
+    footer .footer-logo { margin-bottom: 16px; }
+    footer .footer-logo img { height: 80px; mix-blend-mode: screen; }
+    footer p { font-size: 0.8rem; line-height: 1.8; margin-bottom: 16px; }
+    footer .footer-links { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 24px; }
+    footer .footer-links a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; }
+    footer .footer-links a:hover { color: var(--gold); }
+    footer .copyright { font-size: 0.75rem; }
+
+    /* レスポンシブ */
+    @media (max-width: 768px) {
+      header { padding: 14px 20px; }
+      nav a { margin-left: 16px; font-size: 0.8rem; }
+      .privacy-section { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">
+    <img src="logo2.png" alt="ミリオンクエスト">
+  </a>
+  <nav>
+    <a href="index.html">ホーム</a>
+    <a href="blog.html">ブログ</a>
+    <a href="https://youtube.com">YouTube</a>
+  </nav>
+</header>
+
+<div class="page-hero">
+  <p class="label">PRIVACY POLICY</p>
+  <h1>プライバシーポリシー</h1>
+  <p>ミリオンクエスト公式サイトにおける個人情報の取り扱いについて説明します。</p>
+</div>
+
+<div class="privacy-container">
+
+  <p class="last-updated">最終更新日：2026年4月20日</p>
+
+  <div class="intro-card">
+    ミリオンクエスト（以下「当サイト」）は、訪問者の個人情報・プライバシーを尊重し、適切に保護することを重要な責務と考えています。このプライバシーポリシーでは、当サイトにおける情報の収集・利用・管理方針をご説明します。
+  </div>
+
+  <!-- 1. 運営者情報 -->
+  <div class="privacy-section">
+    <h2>1. 運営者情報</h2>
+    <ul>
+      <li>サイト名：ミリオンクエスト（MILLION QUEST）</li>
+      <li>サイトURL：millionquest.jp（開設準備中）</li>
+      <li>お問い合わせ：<a href="contact.html">お問い合わせフォーム</a>よりご連絡ください</li>
+    </ul>
+  </div>
+
+  <!-- 2. 収集する情報 -->
+  <div class="privacy-section">
+    <h2>2. 収集する情報</h2>
+    <p>当サイトでは、以下の情報を収集することがあります。</p>
+    <ul>
+      <li><strong>お問い合わせフォームを通じてご入力いただいた情報</strong>（お名前・メールアドレス・お問い合わせ内容）</li>
+      <li><strong>アクセスログ情報</strong>（IPアドレス・ブラウザの種類・訪問ページ・閲覧日時など）</li>
+      <li><strong>Cookie・類似技術によって収集される情報</strong>（詳細は「Cookieについて」の項を参照）</li>
+    </ul>
+  </div>
+
+  <!-- 3. 利用目的 -->
+  <div class="privacy-section">
+    <h2>3. 個人情報の利用目的</h2>
+    <p>収集した個人情報は、以下の目的のみに使用します。</p>
+    <ul>
+      <li>お問い合わせへの返信・対応</li>
+      <li>サイト・コンテンツの改善・分析</li>
+      <li>不正アクセスの検知・防止</li>
+      <li>法令に基づく対応が必要な場合</li>
+    </ul>
+    <p>収集した情報を、上記以外の目的で使用することはありません。</p>
+  </div>
+
+  <!-- 4. 第三者提供 -->
+  <div class="privacy-section">
+    <h2>4. 第三者への提供</h2>
+    <p>当サイトは、以下の場合を除き、取得した個人情報を第三者に提供・開示しません。</p>
+    <ul>
+      <li>ご本人の同意がある場合</li>
+      <li>法令に基づき開示が必要な場合</li>
+      <li>人の生命・身体・財産の保護のために必要な場合</li>
+    </ul>
+  </div>
+
+  <!-- 5. Googleアナリティクス -->
+  <div class="privacy-section">
+    <h2>5. アクセス解析ツール（Googleアナリティクス）</h2>
+    <p>当サイトでは、サイト改善のためにGoogle LLCが提供する「Googleアナリティクス」を利用する場合があります。</p>
+    <p>Googleアナリティクスは、Cookieを使用してアクセス情報を収集します。収集されるデータは匿名であり、個人を特定するものではありません。</p>
+    <div class="highlight-box">
+      Googleのデータ収集・処理に関する詳細は、<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Googleプライバシーポリシー</a>をご確認ください。Cookieを無効にすることで、データ収集を拒否することができます。
+    </div>
+  </div>
+
+  <!-- 6. YouTube埋め込み -->
+  <div class="privacy-section">
+    <h2>6. YouTubeの埋め込みコンテンツについて</h2>
+    <p>当サイトでは、YouTube（Google LLC）の動画を埋め込んで表示する場合があります。これにより、YouTubeのCookieがお使いのブラウザに設定される場合があります。</p>
+    <p>YouTubeの利用規約・プライバシーポリシーについては、<a href="https://www.youtube.com/t/privacy" target="_blank" rel="noopener">YouTubeプライバシーポリシー</a>をご参照ください。</p>
+  </div>
+
+  <!-- 7. Cookieについて -->
+  <div class="privacy-section">
+    <h2>7. Cookieについて</h2>
+    <p>Cookieとは、ウェブサイトがブラウザに送信する小さなデータファイルです。当サイトでは、サイトの利便性向上・アクセス解析のためにCookieを使用する場合があります。</p>
+    <p>ブラウザの設定からCookieを無効にすることができますが、その場合、一部のコンテンツが正しく表示されない場合があります。</p>
+  </div>
+
+  <!-- 8. 免責事項 -->
+  <div class="privacy-section">
+    <h2>8. 免責事項</h2>
+    <p>当サイトに掲載している情報は、一般的な情報提供を目的としており、投資・資産運用などに関する個別のアドバイスを行うものではありません。</p>
+    <p>当サイトの情報を参考にした行動・判断については、ご自身の責任のもとで行っていただくようお願いいたします。当サイトは、情報の利用によって生じたいかなる損害についても責任を負いません。</p>
+    <p>また、当サイトから外部リンクで移動したサイトのコンテンツについては、当サイトは責任を負いません。</p>
+  </div>
+
+  <!-- 9. 著作権 -->
+  <div class="privacy-section">
+    <h2>9. 著作権</h2>
+    <p>当サイトに掲載されているコンテンツ（文章・画像・イラスト・動画など）の著作権は、ミリオンクエスト運営者または正当な権利を有する第三者に帰属します。</p>
+    <p>無断での転載・複製・二次利用はお断りしております。引用する場合は、出典の明記と当サイトへのリンクをお願いします。</p>
+  </div>
+
+  <!-- 10. ポリシーの変更 -->
+  <div class="privacy-section">
+    <h2>10. プライバシーポリシーの変更について</h2>
+    <p>本プライバシーポリシーは、法令の変更やサービス内容の変化に応じて、予告なく改訂する場合があります。変更後のポリシーは、当ページに掲載した時点から効力を持ちます。</p>
+    <p>定期的にご確認いただくことをお勧めします。</p>
+  </div>
+
+  <!-- 11. お問い合わせ -->
+  <div class="privacy-section">
+    <h2>11. 個人情報に関するお問い合わせ</h2>
+    <p>個人情報の開示・訂正・削除のご依頼、またはプライバシーポリシーに関するご質問は、下記よりお問い合わせください。</p>
+    <div class="highlight-box">
+      📩 <a href="contact.html">お問い合わせフォーム</a>からご連絡ください。<br>
+      確認のうえ、誠実に対応いたします。
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-logo"><img src="logo2.png" alt="ミリオンクエスト"></div>
+  <p>普通家庭のお金の経営学・冒険チャンネル</p>
+  <div class="footer-links">
+    <a href="index.html">ホーム</a>
+    <a href="blog.html">ブログ</a>
+    <a href="https://youtube.com">YouTube</a>
+    <a href="contact.html">お問い合わせ</a>
+    <a href="privacy.html">プライバシーポリシー</a>
+  </div>
+  <p class="copyright">© 2026 MillionQuest. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
