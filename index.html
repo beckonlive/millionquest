@@ -498,9 +498,17 @@
       box-shadow: 0 12px 40px rgba(0,0,0,0.1);
     }
 
-    .char-card img {
-      height: 160px;
+    .char-img-area {
+      height: 200px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
       margin-bottom: 16px;
+    }
+
+    .char-card img {
+      max-height: 200px;
+      width: auto;
       filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15));
       mix-blend-mode: multiply;
     }
@@ -1048,7 +1056,7 @@
 
       <div class="char-grid">
         <div class="char-card">
-          <img src="characters/papa.png" alt="パパ（勇者）">
+          <div class="char-img-area"><img src="characters/papa.png" alt="パパ（勇者）"></div>
           <div class="role">サラリーマン・経営学者</div>
           <h3>パパ</h3>
           <div class="char-level">
@@ -1064,7 +1072,7 @@
           <p style="margin-top:12px;">40代。本業はサラリーマン、副業として講演活動・非常勤講師を務める経営学者。学術的な経営学を「お金と日常」に落とし込み、誰でも使える知識として発信する。趣味はお酒。単身赴任中。</p>
         </div>
         <div class="char-card">
-          <img src="characters/mama.png" alt="ママ（賢者）">
+          <div class="char-img-area"><img src="characters/mama.png" alt="ママ（賢者）"></div>
           <div class="role">パート主婦・扶養内</div>
           <h3>ママ</h3>
           <div class="char-level">
@@ -1080,7 +1088,7 @@
           <p style="margin-top:12px;">40代。扶養内で働きながら家族を支える。「家庭のお金」を経営目線で管理し、節約・投資・資産形成の実践者として家族の財務を守る。</p>
         </div>
         <div class="char-card">
-          <img src="characters/sister.png" alt="姉（魔法使い）">
+          <div class="char-img-area"><img src="characters/sister.png" alt="姉（魔法使い）"></div>
           <div class="role">私立中学生</div>
           <h3>姉</h3>
           <div class="char-level">
@@ -1096,7 +1104,7 @@
           <p style="margin-top:12px;">私立中学生。Z世代の感性でSNSとクリエイティブを担当。「学生目線のお金と経営」を発信しながら、将来の起業を密かに夢見ている。</p>
         </div>
         <div class="char-card">
-          <img src="characters/sister2.png" alt="妹（僧侶）">
+          <div class="char-img-area"><img src="characters/sister2.png" alt="妹（僧侶）"></div>
           <div class="role">公立小学生</div>
           <h3>妹</h3>
           <div class="char-level">
