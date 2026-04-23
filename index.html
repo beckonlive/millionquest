@@ -417,15 +417,24 @@
 
     /* ========== お金の経営学 ========== */
     .money-section {
-      background:
-        linear-gradient(135deg, rgba(10,14,31,0.82) 0%, rgba(26,36,86,0.78) 100%),
-        url('okane-keieigaku.png') center center / cover no-repeat;
+      background: linear-gradient(135deg, var(--navy-dark), var(--navy));
       color: white;
-      position: relative;
     }
 
     .money-section .section-title { color: var(--gold); }
-    .money-section .section-desc { color: rgba(255,255,255,0.85); }
+    .money-section .section-desc { color: rgba(255,255,255,0.75); }
+
+    .blog-cta-img {
+      display: block;
+      width: 100%;
+      max-width: 720px;
+      margin: 0 auto 32px;
+      border-radius: 16px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+    .blog-cta-img:hover { transform: scale(1.02); }
 
     .money-grid {
       display: grid;
@@ -1001,49 +1010,16 @@
         </div>
       </div>
 
-      <div class="money-grid">
-        <div class="money-card">
-          <div class="icon">🏠</div>
-          <h3>家計を経営する</h3>
-          <p>
-            家庭のお金を「経営」の視点で管理する。収支・固定費・投資の三角形。経営学が教える家計改善の本質。
-          </p>
-        </div>
-        <div class="money-card">
-          <div class="icon">📊</div>
-          <h3>財務諸表で自分を分析する</h3>
-          <p>
-            BS・PL・CFは会社だけのものじゃない。自分の資産・収入・お金の流れを経営学の言葉で読み解く。
-          </p>
-        </div>
-        <div class="money-card">
-          <div class="icon">💡</div>
-          <h3>日常の出費に戦略を持つ</h3>
-          <p>
-            なぜ節約は続かないのか。経営学の「コスト戦略」を日常に応用する。賢い消費者になるための経営思考。
-          </p>
-        </div>
-        <div class="money-card">
-          <div class="icon">📈</div>
-          <h3>お金を「投資」として考える</h3>
-          <p>
-            経費と投資の違い。時間・お金・労力をどこに投じるか。経営学のROI（投資対効果）を人生に使う方法。
-          </p>
-        </div>
-        <div class="money-card">
-          <div class="icon">🗺️</div>
-          <h3>資産形成を事業計画で考える</h3>
-          <p>
-            1億円への道を「事業計画」として設計する。KPI・マイルストーン・リスク管理。人生を経営する視点。
-          </p>
-        </div>
-        <div class="money-card">
-          <div class="icon">⚔️</div>
-          <h3>サラリーマンの経営戦略</h3>
-          <p>
-            雇われながら資産を築く。副業・複業・転職・昇給交渉を「経営戦略」として考えるとすべてが変わる。
-          </p>
-        </div>
+      <!-- ブログ誘導 -->
+      <div style="text-align:center;">
+        <a href="blog.html">
+          <img src="okane-keieigaku.png" alt="お金の経営学ブログ" class="blog-cta-img">
+        </a>
+        <p style="color:rgba(255,255,255,0.75); font-size:0.95rem; margin-bottom:24px; line-height:1.9;">
+          投資・家計・資産形成を「経営学」の視点で解説。<br>
+          難しい経済用語なしで、すぐに使える知識をブログで届けています。
+        </p>
+        <a href="blog.html" class="btn-secondary" style="display:inline-block;">📝 お金の経営学ブログを読む</a>
       </div>
     </div>
   </section>
