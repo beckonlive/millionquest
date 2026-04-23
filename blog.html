@@ -3,20 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>お金の経営学ブログ | ミリオンクエスト</title>
-  <meta name="description" content="経営・ビジネス・お金の知識をわかりやすく解説するブログ。ミリオンクエストが届ける「お金の経営学」。">
+  <title>ブログ | ミリオンクエスト</title>
+  <meta name="description" content="お金の経営学・家庭の経営戦略・副業。普通のサラリーマンが資産1億円を目指すリアルなノウハウをお届けします。">
   <link rel="icon" href="logo2.png">
-  <!-- OGP -->
-  <meta property="og:title" content="お金の経営学ブログ | ミリオンクエスト">
-  <meta property="og:description" content="経営・ビジネス・お金の知識をわかりやすく解説するブログ。財務諸表・価格戦略・副業まで、使えるレベルで届けます。">
+  <meta property="og:title" content="ブログ | ミリオンクエスト">
+  <meta property="og:description" content="お金の経営学・家庭の経営戦略・副業。資産8,000万円超えのパパが教えるリアルな知識。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://millionquest.jp/blog.html">
   <meta property="og:image" content="https://millionquest.jp/thumbnail.png">
   <meta property="og:site_name" content="ミリオンクエスト">
   <meta property="og:locale" content="ja_JP">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="お金の経営学ブログ | ミリオンクエスト">
-  <meta name="twitter:description" content="経営・ビジネス・お金の知識をわかりやすく解説するブログ。">
+  <meta name="twitter:title" content="ブログ | ミリオンクエスト">
+  <meta name="twitter:description" content="お金の経営学・家庭の経営戦略・副業。資産8,000万円超えのパパが届けるリアルな知識。">
   <meta name="twitter:image" content="https://millionquest.jp/thumbnail.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
@@ -31,10 +30,19 @@
       --white: #ffffff;
       --text-dark: #1a1a2e;
       --text-mid: #4a4a6a;
+
+      /* カテゴリカラー */
+      --cat1: #1a6b4a;   /* お金の経営学：グリーン */
+      --cat1-bg: #eaf5f0;
+      --cat2: #1a2456;   /* 家庭の経営戦略：ネイビー */
+      --cat2-bg: #eef0f8;
+      --cat3: #8b4513;   /* 副業：ブラウン */
+      --cat3-bg: #fdf3ea;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Noto Sans JP', sans-serif; background: var(--cream); color: var(--text-dark); }
 
+    /* ===== HEADER ===== */
     header {
       background: var(--navy-dark);
       border-bottom: 3px solid var(--gold);
@@ -48,6 +56,7 @@
     nav a { color: rgba(255,255,255,0.8); text-decoration: none; margin-left: 28px; font-size: 0.9rem; }
     nav a:hover { color: var(--gold); }
 
+    /* ===== HERO ===== */
     .page-hero {
       background:
         linear-gradient(135deg, rgba(10,14,31,0.82) 0%, rgba(26,36,86,0.78) 100%),
@@ -57,14 +66,51 @@
     }
     .page-hero .label { color: var(--gold); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; margin-bottom: 12px; }
     .page-hero h1 { font-family: 'Noto Serif JP', serif; font-size: 2.2rem; font-weight: 900; color: var(--white); margin-bottom: 12px; }
-    .page-hero p { color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.8; }
+    .page-hero p { color: rgba(255,255,255,0.75); font-size: 0.95rem; line-height: 1.8; }
 
-    .blog-container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; display: grid; grid-template-columns: 1fr 320px; gap: 48px; }
+    /* ===== カテゴリバナー ===== */
+    .category-banner {
+      background: var(--white);
+      border-bottom: 2px solid var(--cream-dark);
+      padding: 0 20px;
+    }
+    .category-banner-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      gap: 0;
+    }
+    .cat-tab {
+      flex: 1;
+      padding: 20px 16px;
+      text-align: center;
+      cursor: pointer;
+      border-bottom: 4px solid transparent;
+      transition: all 0.2s;
+      text-decoration: none;
+      color: var(--text-mid);
+    }
+    .cat-tab:hover { background: var(--cream); }
+    .cat-tab.active-cat1 { border-color: var(--cat1); color: var(--cat1); background: var(--cat1-bg); }
+    .cat-tab.active-cat2 { border-color: var(--cat2); color: var(--cat2); background: var(--cat2-bg); }
+    .cat-tab.active-cat3 { border-color: var(--cat3); color: var(--cat3); background: var(--cat3-bg); }
+    .cat-tab .cat-icon { font-size: 1.6rem; display: block; margin-bottom: 6px; }
+    .cat-tab .cat-name { font-family: 'Noto Serif JP', serif; font-size: 0.95rem; font-weight: 700; display: block; }
+    .cat-tab .cat-desc { font-size: 0.7rem; color: #aaa; display: block; margin-top: 4px; }
 
-    /* カテゴリタブ */
-    .category-tabs { display: flex; gap: 8px; margin-bottom: 32px; flex-wrap: wrap; }
-    .tab { padding: 8px 20px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; cursor: pointer; border: 2px solid var(--cream-dark); background: white; color: var(--text-mid); }
-    .tab.active { background: var(--navy); color: var(--gold); border-color: var(--navy); }
+    /* ===== BLOG CONTAINER ===== */
+    .blog-container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; display: grid; grid-template-columns: 1fr 300px; gap: 48px; }
+
+    /* 記事フィルター表示 */
+    .filter-bar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; }
+    .filter-bar .showing { font-size: 0.85rem; color: var(--text-mid); }
+    .filter-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+    .filter-tag {
+      padding: 6px 16px; border-radius: 20px; font-size: 0.8rem; font-weight: 700;
+      cursor: pointer; border: 2px solid var(--cream-dark); background: white; color: var(--text-mid);
+      transition: all 0.2s;
+    }
+    .filter-tag:hover, .filter-tag.active { background: var(--navy); color: var(--gold); border-color: var(--navy); }
 
     /* 記事カード */
     .article-list { display: flex; flex-direction: column; gap: 24px; }
@@ -75,29 +121,38 @@
       overflow: hidden;
       border: 2px solid var(--cream-dark);
       display: grid;
-      grid-template-columns: 200px 1fr;
+      grid-template-columns: 180px 1fr;
       transition: all 0.3s;
+      text-decoration: none;
+      color: inherit;
     }
-    .article-card:hover { border-color: var(--gold); box-shadow: 0 8px 32px rgba(0,0,0,0.08); }
+    .article-card:hover { border-color: var(--gold); box-shadow: 0 8px 32px rgba(0,0,0,0.08); transform: translateY(-2px); }
 
     .article-thumb {
-      background: linear-gradient(135deg, var(--navy), #2a3a7a);
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 3rem;
       min-height: 140px;
     }
+    .thumb-cat1 { background: linear-gradient(135deg, #1a6b4a, #2d9e6f); }
+    .thumb-cat2 { background: linear-gradient(135deg, var(--navy-dark), var(--navy)); }
+    .thumb-cat3 { background: linear-gradient(135deg, #8b4513, #c8692b); }
 
     .article-body { padding: 24px; }
-    .article-body .tags { display: flex; gap: 8px; margin-bottom: 10px; }
-    .article-body .tag { font-size: 0.7rem; font-weight: 700; color: var(--red); background: #fef0ef; padding: 3px 10px; border-radius: 10px; }
-    .article-body h3 { font-family: 'Noto Serif JP', serif; font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; line-height: 1.5; }
+    .article-body .tag {
+      display: inline-block; font-size: 0.7rem; font-weight: 700;
+      padding: 3px 12px; border-radius: 10px; margin-bottom: 10px;
+    }
+    .tag-cat1 { color: var(--cat1); background: var(--cat1-bg); }
+    .tag-cat2 { color: var(--cat2); background: var(--cat2-bg); }
+    .tag-cat3 { color: var(--cat3); background: var(--cat3-bg); }
+
+    .article-body h3 { font-family: 'Noto Serif JP', serif; font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; line-height: 1.6; }
     .article-body p { font-size: 0.875rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 12px; }
     .article-body .meta { font-size: 0.75rem; color: #aaa; }
 
-    /* サイドバー */
-    .sidebar {}
+    /* ===== サイドバー ===== */
     .sidebar-block { background: white; border-radius: 12px; padding: 24px; margin-bottom: 24px; border: 2px solid var(--cream-dark); }
     .sidebar-block h3 { font-family: 'Noto Serif JP', serif; font-size: 1rem; font-weight: 700; color: var(--navy); border-left: 3px solid var(--gold); padding-left: 12px; margin-bottom: 16px; }
 
@@ -105,15 +160,22 @@
     .sidebar-cta h3 { color: var(--gold); border-color: var(--gold); }
     .sidebar-cta p { color: rgba(255,255,255,0.8); font-size: 0.85rem; line-height: 1.7; margin-bottom: 16px; }
 
-    .btn { display: block; text-align: center; padding: 12px 20px; border-radius: 8px; font-weight: 700; font-size: 0.9rem; text-decoration: none; }
+    .btn { display: block; text-align: center; padding: 12px 20px; border-radius: 8px; font-weight: 700; font-size: 0.9rem; text-decoration: none; margin-bottom: 8px; }
     .btn-red { background: var(--red); color: white; }
     .btn-gold { background: var(--gold); color: var(--navy-dark); }
 
-    .category-list { list-style: none; }
-    .category-list li { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--cream-dark); font-size: 0.875rem; }
-    .category-list li a { color: var(--text-dark); text-decoration: none; }
-    .category-list li a:hover { color: var(--navy); }
-    .category-list li span { background: var(--cream); color: var(--text-mid); font-size: 0.75rem; padding: 2px 8px; border-radius: 10px; }
+    .cat-nav-list { list-style: none; }
+    .cat-nav-list li {
+      display: flex; align-items: center; gap: 10px;
+      padding: 12px 0; border-bottom: 1px solid var(--cream-dark);
+      font-size: 0.875rem; cursor: pointer;
+    }
+    .cat-nav-list li:last-child { border-bottom: none; }
+    .cat-nav-list li .dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    .dot-cat1 { background: var(--cat1); }
+    .dot-cat2 { background: var(--cat2); }
+    .dot-cat3 { background: var(--cat3); }
+    .cat-nav-list li span:last-child { margin-left: auto; background: var(--cream); color: var(--text-mid); font-size: 0.75rem; padding: 2px 8px; border-radius: 10px; }
 
     footer { background: var(--navy-dark); color: rgba(255,255,255,0.6); text-align: center; padding: 40px 20px; border-top: 3px solid var(--gold); }
     footer .footer-logo { margin-bottom: 16px; }
@@ -125,9 +187,13 @@
     footer .copyright { font-size: 0.75rem; }
 
     @media (max-width: 768px) {
+      header { padding: 12px 20px; }
+      nav { display: none; }
       .blog-container { grid-template-columns: 1fr; }
       .article-card { grid-template-columns: 1fr; }
-      .article-thumb { min-height: 120px; }
+      .article-thumb { min-height: 100px; }
+      .category-banner-inner { flex-direction: column; }
+      .cat-tab { padding: 14px 12px; }
     }
   </style>
 </head>
@@ -140,108 +206,185 @@
   <nav>
     <a href="index.html">ホーム</a>
     <a href="blog.html">ブログ</a>
-    <a href="characters.html">冒険者</a>
-    <a href="https://www.youtube.com/@millionquest">YouTube</a>
+    <a href="https://x.com/Million_Quest_" target="_blank">X</a>
+    <a href="https://www.instagram.com/million_quest_jp/" target="_blank">Instagram</a>
+    <a href="https://www.youtube.com/@millionquest" target="_blank">YouTube</a>
   </nav>
 </header>
 
+<!-- HERO -->
 <div class="page-hero">
   <p class="label">BLOG</p>
   <h1>お金の経営学ブログ</h1>
-  <p>経営・ビジネス・お金の知識を、使えるレベルで届けます。<br>YouTubeの補完コンテンツとして、さらに深く学べます。</p>
+  <p>年収400万台・4人家族で資産8,000万円超えのパパが届ける、<br>再現性のあるお金の知識。</p>
 </div>
 
+<!-- カテゴリバナー -->
+<div class="category-banner">
+  <div class="category-banner-inner">
+    <a href="#" class="cat-tab active-cat1" onclick="filterCat('cat1'); return false;">
+      <span class="cat-icon">📊</span>
+      <span class="cat-name">お金の経営学</span>
+      <span class="cat-desc">投資・NISA・資産形成の知識</span>
+    </a>
+    <a href="#" class="cat-tab" onclick="filterCat('cat2'); return false;">
+      <span class="cat-icon">🏠</span>
+      <span class="cat-name">家庭の経営戦略</span>
+      <span class="cat-desc">家計管理・節約・教育費</span>
+    </a>
+    <a href="#" class="cat-tab" onclick="filterCat('cat3'); return false;">
+      <span class="cat-icon">⚔️</span>
+      <span class="cat-name">副業</span>
+      <span class="cat-desc">収入複線化・スキルの活かし方</span>
+    </a>
+  </div>
+</div>
+
+<!-- BLOG CONTAINER -->
 <div class="blog-container">
   <main>
-    <div class="category-tabs">
-      <div class="tab active">すべて</div>
-      <div class="tab">お金の基礎</div>
-      <div class="tab">経営戦略</div>
-      <div class="tab">実例解剖</div>
-      <div class="tab">思考法</div>
-      <div class="tab">複業・副業</div>
+    <div class="filter-bar">
+      <span class="showing" id="showing-text">すべての記事を表示中</span>
+      <div class="filter-tags">
+        <div class="filter-tag active" onclick="filterCat('all')">すべて</div>
+        <div class="filter-tag" onclick="filterCat('cat1')">お金の経営学</div>
+        <div class="filter-tag" onclick="filterCat('cat2')">家庭の経営戦略</div>
+        <div class="filter-tag" onclick="filterCat('cat3')">副業</div>
+      </div>
     </div>
 
-    <div class="article-list">
-      <div class="article-card">
-        <div class="article-thumb">📊</div>
+    <div class="article-list" id="article-list">
+
+      <!-- お金の経営学 -->
+      <div class="article-card" data-cat="cat1">
+        <div class="article-thumb thumb-cat1">📊</div>
         <div class="article-body">
-          <div class="tags"><span class="tag">お金の基礎</span></div>
-          <h3>財務諸表が10分でわかる｜売上・利益・キャッシュフローの違い</h3>
-          <p>「売上は上がっているのになぜ手元にお金がないのか」。経営者が最初にぶつかるこの疑問を、財務諸表の基礎から丁寧に解説します。</p>
-          <div class="meta">2026.04.20 ・ 読了約8分</div>
+          <span class="tag tag-cat1">お金の経営学</span>
+          <h3>新NISAは「非課税事業部門」だ｜経営学で読み解く最強の投資戦略</h3>
+          <p>会社が節税のために事業部門を分けるように、家庭にも「非課税で運用する部門」が作れる。それが新NISAです。経営学の視点で新NISAの本質を解説します。</p>
+          <div class="meta">2026.04.22 ・ 読了約8分</div>
         </div>
       </div>
 
-      <div class="article-card">
-        <div class="article-thumb">🏰</div>
+      <div class="article-card" data-cat="cat1">
+        <div class="article-thumb thumb-cat1">📈</div>
         <div class="article-body">
-          <div class="tags"><span class="tag">実例解剖</span></div>
-          <h3>スタバはなぜ値上げしても売れるのか｜ブランド経営の正体</h3>
-          <p>スターバックスのコーヒーは決して安くない。それでも世界中の人が買い続ける。その理由を「ブランド経営」の視点から徹底解剖します。</p>
-          <div class="meta">2026.04.18 ・ 読了約10分</div>
+          <span class="tag tag-cat1">お金の経営学</span>
+          <h3>S&P500への投資が「最強の経営判断」である理由</h3>
+          <p>過去30年の平均年利約10%。経営学のROI（投資対効果）で考えれば、S&P500への長期積立は最も合理的な判断です。数字で徹底解説します。</p>
+          <div class="meta">2026.04.18 ・ 読了約7分</div>
         </div>
       </div>
 
-      <div class="article-card">
-        <div class="article-thumb">⚔️</div>
+      <div class="article-card" data-cat="cat1">
+        <div class="article-thumb thumb-cat1">💡</div>
         <div class="article-body">
-          <div class="tags"><span class="tag">思考法</span></div>
-          <h3>意思決定が速い経営者がやっていること｜決断力の鍛え方</h3>
-          <p>成功する経営者は、なぜあれほど速く決断できるのか。その裏にある「意思決定のフレームワーク」を公開します。</p>
-          <div class="meta">2026.04.15 ・ 読了約7分</div>
+          <span class="tag tag-cat1">お金の経営学</span>
+          <h3>iDeCoを「節税しながら運用する経営戦略」として使う</h3>
+          <p>iDeCoは単なる年金ではありません。経営者が節税しながら資産を増やすのと同じ発想で使えば、サラリーマンの強力な武器になります。</p>
+          <div class="meta">2026.04.14 ・ 読了約9分</div>
         </div>
       </div>
 
-      <div class="article-card">
-        <div class="article-thumb">💰</div>
+      <!-- 家庭の経営戦略 -->
+      <div class="article-card" data-cat="cat2">
+        <div class="article-thumb thumb-cat2">🏠</div>
         <div class="article-body">
-          <div class="tags"><span class="tag">複業・副業</span></div>
-          <h3>普通の家族が複業で月収を増やす方法｜リスクゼロの始め方</h3>
-          <p>「複業」は特別な才能がある人だけのものじゃない。本業のスキルを活かして、リスクなく収入を複線化する現実的な方法を解説します。</p>
+          <span class="tag tag-cat2">家庭の経営戦略</span>
+          <h3>家計をPL・BS・CFで管理する｜財務三表思考の家計術</h3>
+          <p>会社がPL（損益計算書）・BS（貸借対照表）・CF（キャッシュフロー）で経営を管理するように、家計も同じ3つの視点で見ると何が変わるか。実践的に解説します。</p>
+          <div class="meta">2026.04.20 ・ 読了約10分</div>
+        </div>
+      </div>
+
+      <div class="article-card" data-cat="cat2">
+        <div class="article-thumb thumb-cat2">👨‍👩‍👧‍👦</div>
+        <div class="article-body">
+          <span class="tag tag-cat2">家庭の経営戦略</span>
+          <h3>4人家族で資産8,000万円超え｜我が家の家計の作り方</h3>
+          <p>年収400万台のサラリーマンが、なぜ8,000万円超えの資産を作れたのか。固定費の削減・投資への回し方・家族の役割分担まで、リアルな数字とともに公開します。</p>
+          <div class="meta">2026.04.16 ・ 読了約12分</div>
+        </div>
+      </div>
+
+      <div class="article-card" data-cat="cat2">
+        <div class="article-thumb thumb-cat2">📚</div>
+        <div class="article-body">
+          <span class="tag tag-cat2">家庭の経営戦略</span>
+          <h3>子どもの教育費を「投資」として考える｜私立中学受験の経営学</h3>
+          <p>教育費は「コスト」か「投資」か。子どもの私立中学受験を経営学的に判断したパパの思考プロセスを公開します。意思決定の裏側とその結果。</p>
+          <div class="meta">2026.04.10 ・ 読了約8分</div>
+        </div>
+      </div>
+
+      <!-- 副業 -->
+      <div class="article-card" data-cat="cat3">
+        <div class="article-thumb thumb-cat3">⚔️</div>
+        <div class="article-body">
+          <span class="tag tag-cat3">副業</span>
+          <h3>サラリーマンが「本業のスキル」で副業する3つの方法</h3>
+          <p>副業は特別な才能がなくてもできます。本業で身につけたスキルをそのまま活かして、リスクゼロで収入を複線化する現実的な方法を紹介します。</p>
           <div class="meta">2026.04.12 ・ 読了約9分</div>
         </div>
       </div>
 
-      <div class="article-card">
-        <div class="article-thumb">📈</div>
+      <div class="article-card" data-cat="cat3">
+        <div class="article-thumb thumb-cat3">🎓</div>
         <div class="article-body">
-          <div class="tags"><span class="tag">経営戦略</span></div>
-          <h3>価格設定の科学｜なぜ「値下げ」は最悪の戦略なのか</h3>
-          <p>「売れないなら値下げすればいい」。この発想が会社を潰す。価格設定の正しい考え方と、利益を最大化する値付けの戦略を学びます。</p>
-          <div class="meta">2026.04.10 ・ 読了約8分</div>
+          <span class="tag tag-cat3">副業</span>
+          <h3>講演・非常勤講師で月収を増やした話｜経営学者パパの副業記録</h3>
+          <p>本業のサラリーマンをしながら、非常勤講師と講演活動で収入を複線化しました。どうやって機会を掴んだか、どれくらい稼げるか、リアルを公開します。</p>
+          <div class="meta">2026.04.08 ・ 読了約11分</div>
         </div>
       </div>
+
     </div>
   </main>
 
   <aside class="sidebar">
+    <!-- CTA -->
     <div class="sidebar-block sidebar-cta">
-      <h3>チャンネル登録する</h3>
-      <p>週1〜2本、経営・ビジネス・お金の知識を動画で届けます。登録して冒険を一緒に歩みましょう。</p>
-      <a href="https://www.youtube.com/@millionquest" class="btn btn-red">▶ YouTubeで登録する</a>
+      <h3>X（Twitter）をフォロー</h3>
+      <p>毎朝7時に「お金の経営学」を投稿中。280文字で使える知識を届けています。</p>
+      <a href="https://x.com/Million_Quest_" target="_blank" class="btn btn-gold">📊 @Million_Quest_ をフォロー</a>
+      <a href="https://www.youtube.com/@millionquest" target="_blank" class="btn btn-red">▶ YouTubeで登録する</a>
     </div>
 
+    <!-- カテゴリ -->
     <div class="sidebar-block">
       <h3>カテゴリ</h3>
-      <ul class="category-list">
-        <li><a href="#">お金の基礎</a><span>12</span></li>
-        <li><a href="#">経営戦略</a><span>8</span></li>
-        <li><a href="#">実例解剖</a><span>6</span></li>
-        <li><a href="#">経営者の思考法</a><span>5</span></li>
-        <li><a href="#">複業・副業</a><span>4</span></li>
-        <li><a href="#">組織・採用</a><span>3</span></li>
+      <ul class="cat-nav-list">
+        <li onclick="filterCat('cat1')">
+          <span class="dot dot-cat1"></span>
+          <span>お金の経営学</span>
+          <span>3</span>
+        </li>
+        <li onclick="filterCat('cat2')">
+          <span class="dot dot-cat2"></span>
+          <span>家庭の経営戦略</span>
+          <span>3</span>
+        </li>
+        <li onclick="filterCat('cat3')">
+          <span class="dot dot-cat3"></span>
+          <span>副業</span>
+          <span>2</span>
+        </li>
       </ul>
     </div>
 
+    <!-- パパ紹介 -->
     <div class="sidebar-block">
-      <h3>人気記事</h3>
-      <div style="font-size:0.85rem; line-height:1.7; color:var(--text-mid);">
-        <p style="padding:10px 0; border-bottom:1px solid var(--cream-dark);">📊 財務諸表が10分でわかる</p>
-        <p style="padding:10px 0; border-bottom:1px solid var(--cream-dark);">🏰 スタバの値上げ戦略の正体</p>
-        <p style="padding:10px 0; border-bottom:1px solid var(--cream-dark);">💰 複業で月収を増やす方法</p>
-        <p style="padding:10px 0;">⚔️ 決断力の鍛え方</p>
+      <h3>このブログについて</h3>
+      <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
+        <img src="characters/papa.png" alt="パパ" style="height:60px; filter:drop-shadow(0 2px 6px rgba(0,0,0,0.15));">
+        <div>
+          <div style="font-size:0.75rem; color:var(--gold); font-weight:700;">パパ（勇者）</div>
+          <div style="font-size:0.8rem; color:var(--text-mid);">サラリーマン・経営学者</div>
+        </div>
       </div>
+      <p style="font-size:0.82rem; color:var(--text-mid); line-height:1.7;">
+        年収400万台・4人家族で資産8,000万円超え。経営学の理論をお金と日常生活に落とし込んで発信しています。
+      </p>
     </div>
   </aside>
 </div>
@@ -252,11 +395,59 @@
   <div class="footer-links">
     <a href="index.html">ホーム</a>
     <a href="blog.html">ブログ</a>
+    <a href="https://x.com/Million_Quest_" target="_blank">X（Twitter）</a>
+    <a href="https://www.instagram.com/million_quest_jp/" target="_blank">Instagram</a>
     <a href="contact.html">お問い合わせ</a>
     <a href="privacy.html">プライバシーポリシー</a>
   </div>
   <p class="copyright">© 2026 MillionQuest. All rights reserved.</p>
 </footer>
+
+<script>
+  function filterCat(cat) {
+    const cards = document.querySelectorAll('.article-card');
+    const tabs  = document.querySelectorAll('.cat-tab');
+    const filterTags = document.querySelectorAll('.filter-tag');
+    const showingText = document.getElementById('showing-text');
+
+    // カードフィルター
+    let count = 0;
+    cards.forEach(card => {
+      if (cat === 'all' || card.dataset.cat === cat) {
+        card.style.display = 'grid';
+        count++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    // カテゴリタブのアクティブ状態
+    tabs.forEach(tab => {
+      tab.className = 'cat-tab';
+    });
+    if (cat === 'cat1') {
+      document.querySelector('.cat-tab:nth-child(1)').classList.add('active-cat1');
+      showingText.textContent = '「お金の経営学」の記事を表示中';
+    } else if (cat === 'cat2') {
+      document.querySelector('.cat-tab:nth-child(2)').classList.add('active-cat2');
+      showingText.textContent = '「家庭の経営戦略」の記事を表示中';
+    } else if (cat === 'cat3') {
+      document.querySelector('.cat-tab:nth-child(3)').classList.add('active-cat3');
+      showingText.textContent = '「副業」の記事を表示中';
+    } else {
+      document.querySelector('.cat-tab:nth-child(1)').classList.add('active-cat1');
+      showingText.textContent = 'すべての記事を表示中（' + count + '件）';
+    }
+
+    // フィルタータグのアクティブ状態
+    filterTags.forEach(tag => tag.classList.remove('active'));
+    const tagMap = { all: 0, cat1: 1, cat2: 2, cat3: 3 };
+    filterTags[tagMap[cat]]?.classList.add('active');
+  }
+
+  // 初期表示
+  filterCat('all');
+</script>
 
 </body>
 </html>
