@@ -1042,11 +1042,11 @@
             <div>
               <div class="level-badge">LEVEL</div>
             </div>
-            <div class="level-num">61.4</div>
+            <div class="level-num" id="papa-lv-num">61.4</div>
           </div>
           <div class="level-bar-wrap">
-            <div class="level-bar"><div class="level-bar-fill" style="width:61.4%"></div></div>
-            <div class="level-bar-label"><span>61.4 / 100</span><span>目標：$1M</span></div>
+            <div class="level-bar"><div class="level-bar-fill" id="papa-lv-bar" style="width:61.4%"></div></div>
+            <div class="level-bar-label"><span id="papa-lv-label">61.4 / 100</span><span>目標：$1M</span></div>
           </div>
           <p style="margin-top:12px;">40代。本業はサラリーマン、副業として講演活動・非常勤講師を務める経営学者。学術的な経営学を「お金と日常」に落とし込み、誰でも使える知識として発信する。趣味はお酒。単身赴任中。</p>
         </div>
@@ -1058,11 +1058,11 @@
             <div>
               <div class="level-badge">LEVEL</div>
             </div>
-            <div class="level-num">16.2</div>
+            <div class="level-num" id="mama-lv-num">16.2</div>
           </div>
           <div class="level-bar-wrap">
-            <div class="level-bar"><div class="level-bar-fill" style="width:16.2%"></div></div>
-            <div class="level-bar-label"><span>16.2 / 100</span><span>目標：$1M</span></div>
+            <div class="level-bar"><div class="level-bar-fill" id="mama-lv-bar" style="width:16.2%"></div></div>
+            <div class="level-bar-label"><span id="mama-lv-label">16.2 / 100</span><span>目標：$1M</span></div>
           </div>
           <p style="margin-top:12px;">40代。扶養内で働きながら家族を支える。「家庭のお金」を経営目線で管理し、節約・投資・資産形成の実践者として家族の財務を守る。</p>
         </div>
@@ -1074,11 +1074,11 @@
             <div>
               <div class="level-badge">LEVEL</div>
             </div>
-            <div class="level-num">2.1</div>
+            <div class="level-num" id="sister-lv-num">2.1</div>
           </div>
           <div class="level-bar-wrap">
-            <div class="level-bar"><div class="level-bar-fill" style="width:2.1%"></div></div>
-            <div class="level-bar-label"><span>2.1 / 100</span><span>目標：$1M</span></div>
+            <div class="level-bar"><div class="level-bar-fill" id="sister-lv-bar" style="width:2.1%"></div></div>
+            <div class="level-bar-label"><span id="sister-lv-label">2.1 / 100</span><span>目標：$1M</span></div>
           </div>
           <p style="margin-top:12px;">私立中学生。Z世代の感性でSNSとクリエイティブを担当。「学生目線のお金と経営」を発信しながら、将来の起業を密かに夢見ている。</p>
         </div>
@@ -1090,11 +1090,11 @@
             <div>
               <div class="level-badge">LEVEL</div>
             </div>
-            <div class="level-num">2.1</div>
+            <div class="level-num" id="sister2-lv-num">2.1</div>
           </div>
           <div class="level-bar-wrap">
-            <div class="level-bar"><div class="level-bar-fill" style="width:2.1%"></div></div>
-            <div class="level-bar-label"><span>2.1 / 100</span><span>目標：$1M</span></div>
+            <div class="level-bar"><div class="level-bar-fill" id="sister2-lv-bar" style="width:2.1%"></div></div>
+            <div class="level-bar-label"><span id="sister2-lv-label">2.1 / 100</span><span>目標：$1M</span></div>
           </div>
           <p style="margin-top:12px;">公立小学生。「なんで？」が口癖の末っ子。子どもの純粋な疑問がパパの解説をわかりやすくする。チームの癒しにして、最強の質問係。</p>
         </div>
@@ -1253,8 +1253,8 @@
     // YouTubeチャンネルURL設定
     // チャンネル開設後にここを更新するだけで全リンクが変わります
     // ============================
-    const YOUTUBE_MAIN_URL    = 'https://www.youtube.com/@millionquest';  // ← メインch URL
-    const YOUTUBE_SUB_URL     = 'https://www.youtube.com/@millionquest';  // ← サブch URL（別途変更）
+    const YOUTUBE_MAIN_URL = 'https://www.youtube.com/@millionquest';
+    const YOUTUBE_SUB_URL  = 'https://www.youtube.com/@millionquest';
 
     document.querySelectorAll('a[data-yt="main"]').forEach(a => a.href = YOUTUBE_MAIN_URL);
     document.querySelectorAll('a[data-yt="sub"]').forEach(a => a.href = YOUTUBE_SUB_URL);
@@ -1270,7 +1270,6 @@
       mobileNav.classList.toggle('open');
     });
 
-    // リンクをタップしたらメニューを閉じる
     document.querySelectorAll('.mobile-nav a').forEach(link => {
       link.addEventListener('click', () => {
         hamburger.classList.remove('open');
@@ -1279,13 +1278,22 @@
     });
 
     // ============================
-    // 資産トラッカー設定
-    // ここの数字を更新するだけでHP上の表示が変わります
+    // ★ キャラクターレベル設定
+    // ここだけ更新すれば、バナーもキャラクターカードも全て自動で連動します
+    // レベル = 各自の貯金額（百万円単位）
     // ============================
-    const CURRENT_ASSET_JPY = 83400000; // ← 現在の資産額（円）をここに入力
-    const GOAL_JPY = 100000000;         // 目標：1億円（変更不要）
-    const USD_RATE = 150;               // 円→ドル換算レート（適宜更新）
-    const LAST_UPDATED = '2026.04.24';  // ← 資産を更新した日付をここに入力
+    const LEVELS = {
+      papa:    61.4,   // パパの資産（百万円）
+      mama:    16.2,   // ママの資産（百万円）
+      sister:   2.1,   // 姉の資産（百万円）
+      sister2:  2.1,   // 妹の資産（百万円）
+    };
+
+    // 資産合計を自動計算（更新不要）
+    const CURRENT_ASSET_JPY = Object.values(LEVELS).reduce((a, b) => a + b, 0) * 1000000;
+    const GOAL_JPY     = 100000000;   // 目標：1億円（変更不要）
+    const USD_RATE     = 150;         // 円→ドル換算レート
+    const LAST_UPDATED = '2026.04.24'; // 更新日
 
     // 表示処理
     function formatJpy(n) {
@@ -1324,7 +1332,22 @@
       document.getElementById('assetUpdated').textContent = LAST_UPDATED + ' 更新';
     }
 
-    window.addEventListener('load', updateTracker);
+    // キャラクターカードのレベル表示を自動更新
+    function updateCharLevels() {
+      Object.entries(LEVELS).forEach(([key, lv]) => {
+        const numEl   = document.getElementById(key + '-lv-num');
+        const barEl   = document.getElementById(key + '-lv-bar');
+        const labelEl = document.getElementById(key + '-lv-label');
+        if (numEl)   numEl.textContent       = lv;
+        if (barEl)   barEl.style.width       = lv + '%';
+        if (labelEl) labelEl.textContent     = lv + ' / 100';
+      });
+    }
+
+    window.addEventListener('load', () => {
+      updateTracker();
+      updateCharLevels();
+    });
   </script>
 
 </body>
