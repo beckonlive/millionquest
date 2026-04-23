@@ -134,6 +134,13 @@
       justify-content: center;
       font-size: 3rem;
       min-height: 140px;
+      overflow: hidden;
+    }
+    .article-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      min-height: 140px;
     }
     .thumb-cat1 { background: linear-gradient(135deg, #1a6b4a, #2d9e6f); }
     .thumb-cat2 { background: linear-gradient(135deg, var(--navy-dark), var(--navy)); }
@@ -256,6 +263,18 @@
     <div class="article-list" id="article-list">
 
       <!-- お金の経営学 -->
+      <a href="article-sunk-cost.html" class="article-card" data-cat="cat1">
+        <div class="article-thumb thumb-cat1">
+          <img src="sunk-cost.png" alt="サンクスコスト記事サムネイル">
+        </div>
+        <div class="article-body">
+          <span class="tag tag-cat1">お金の経営学</span>
+          <h3>「もったいない」で損していませんか？サンクスコストをやさしく解説</h3>
+          <p>払った費用が「もったいない」から続ける——この判断が最悪の決断を生む。経営学の視点からサンクスコストの本質と、正しい意思決定の方法をやさしく解説します。</p>
+          <div class="meta">2026.04.24 ・ 読了約10分</div>
+        </div>
+      </a>
+
       <div class="article-card" data-cat="cat1">
         <div class="article-thumb thumb-cat1">📊</div>
         <div class="article-body">
@@ -357,7 +376,7 @@
         <li onclick="filterCat('cat1')">
           <span class="dot dot-cat1"></span>
           <span>お金の経営学</span>
-          <span>3</span>
+          <span>4</span>
         </li>
         <li onclick="filterCat('cat2')">
           <span class="dot dot-cat2"></span>

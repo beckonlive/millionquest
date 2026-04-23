@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お金の経営学｜「もったいない」で損していませんか？サンクスコストをやさしく解説 | ミリオンクエスト</title>
+  <meta name="description" content="使っていないサブスク、行かないジム、途中でやめたい習い事。「もったいない」でやめられないのはサンクスコストの罠。経営学の視点でやさしく解説します。">
+  <link rel="icon" href="logo2.png">
+  <meta property="og:title" content="お金の経営学｜「もったいない」で損していませんか？サンクスコストをやさしく解説">
+  <meta property="og:description" content="「もったいない」でやめられないのはサンクスコストの罠。経営学の視点でやさしく解説します。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://millionquest.jp/article-sunk-cost.html">
+  <meta property="og:image" content="https://millionquest.jp/sunk-cost.png">
+  <meta property="og:site_name" content="ミリオンクエスト">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://millionquest.jp/sunk-cost.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1a2456;
+      --navy-dark: #0f1535;
+      --gold: #c9a84c;
+      --red: #c0392b;
+      --cream: #f8f3e8;
+      --cream-dark: #ede4d0;
+      --white: #ffffff;
+      --text-dark: #1a1a2e;
+      --text-mid: #4a4a6a;
+      --cat1: #1a6b4a;
+      --cat1-bg: #eaf5f0;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Noto Sans JP', sans-serif; background: var(--cream); color: var(--text-dark); line-height: 1.9; }
+
+    header {
+      background: var(--navy-dark);
+      border-bottom: 3px solid var(--gold);
+      padding: 16px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo { text-decoration: none; display: flex; align-items: center; }
+    .logo img { height: 72px; width: auto; mix-blend-mode: screen; }
+    nav a { color: rgba(255,255,255,0.8); text-decoration: none; margin-left: 28px; font-size: 0.9rem; }
+    nav a:hover { color: var(--gold); }
+
+    /* ===== LAYOUT ===== */
+    .article-wrap { max-width: 1100px; margin: 0 auto; padding: 60px 20px; display: grid; grid-template-columns: 1fr 300px; gap: 48px; }
+
+    /* ===== ARTICLE ===== */
+    .article-tag {
+      display: inline-block; background: var(--cat1-bg); color: var(--cat1);
+      font-size: 0.75rem; font-weight: 700; padding: 4px 14px; border-radius: 12px;
+      margin-bottom: 16px;
+    }
+    .article-header h1 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.4rem, 3.5vw, 1.9rem);
+      font-weight: 900; color: var(--navy-dark); line-height: 1.5; margin-bottom: 16px;
+    }
+    .article-meta { font-size: 0.8rem; color: #aaa; display: flex; align-items: center; gap: 16px; margin-bottom: 32px; }
+    .article-meta .author { display: flex; align-items: center; gap: 8px; }
+    .article-meta img { height: 32px; }
+
+    .article-thumbnail { width: 100%; border-radius: 16px; margin-bottom: 48px; box-shadow: 0 8px 40px rgba(0,0,0,0.12); }
+
+    /* 本文 */
+    .article-body { font-size: 1rem; }
+    .article-body p { margin-bottom: 20px; }
+    .article-body strong { color: var(--navy); }
+
+    /* セクション見出し */
+    .section-heading {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.35rem; font-weight: 900; color: var(--navy);
+      border-left: 5px solid var(--gold);
+      padding: 8px 0 8px 18px;
+      margin: 52px 0 24px;
+      line-height: 1.4;
+    }
+
+    /* 吹き出し型ポイント */
+    .callout {
+      background: white;
+      border: 2px solid var(--cream-dark);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 24px 0;
+      font-size: 1rem;
+      position: relative;
+    }
+    .callout::before {
+      content: attr(data-label);
+      position: absolute; top: -13px; left: 20px;
+      background: var(--navy); color: var(--gold);
+      font-size: 0.7rem; font-weight: 700; padding: 3px 12px; border-radius: 8px;
+      letter-spacing: 0.05em;
+    }
+    .callout.green { border-color: var(--cat1); }
+    .callout.green::before { background: var(--cat1); color: white; }
+    .callout.red { border-color: #c0392b; }
+    .callout.red::before { background: #c0392b; color: white; }
+    .callout.gold { border-color: var(--gold); }
+    .callout.gold::before { background: var(--gold); color: var(--navy-dark); }
+
+    /* 矢印ポイント */
+    .arrow-point {
+      background: var(--cat1-bg);
+      border-left: 5px solid var(--cat1);
+      border-radius: 0 12px 12px 0;
+      padding: 16px 20px 16px 20px;
+      margin: 16px 0;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--navy-dark);
+    }
+    .arrow-point.red-bg { background: #fff0f0; border-color: #c0392b; }
+    .arrow-point.gold-bg { background: #fffbea; border-color: var(--gold); }
+
+    /* 漫画エリア */
+    .manga-section {
+      background: linear-gradient(135deg, var(--navy-dark), var(--navy));
+      border-radius: 20px;
+      padding: 32px;
+      margin: 40px 0;
+      text-align: center;
+    }
+    .manga-section .manga-label {
+      color: var(--gold); font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.2em; margin-bottom: 12px;
+    }
+    .manga-section h3 {
+      font-family: 'Noto Serif JP', serif;
+      color: white; font-size: 1.1rem; margin-bottom: 20px;
+    }
+    .manga-section img { width: 100%; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.4); }
+
+    /* リスト */
+    .check-list { list-style: none; margin: 16px 0 24px; }
+    .check-list li {
+      padding: 8px 0 8px 28px;
+      position: relative; border-bottom: 1px solid var(--cream-dark);
+      font-size: 0.95rem;
+    }
+    .check-list li:last-child { border-bottom: none; }
+    .check-list li::before { content: '✔'; position: absolute; left: 0; color: var(--cat1); font-weight: 700; }
+    .check-list.bad li::before { content: '❌'; }
+    .check-list.warn li::before { content: '⚠️'; }
+
+    /* まとめボックス */
+    .summary-box {
+      background: linear-gradient(135deg, var(--navy-dark), var(--navy));
+      border-radius: 16px; padding: 32px; margin: 40px 0; color: white; text-align: center;
+    }
+    .summary-box .sum-label { color: var(--gold); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; margin-bottom: 16px; }
+    .summary-box .sum-text { font-family: 'Noto Serif JP', serif; font-size: 1.4rem; font-weight: 900; color: var(--gold); line-height: 1.5; }
+
+    /* パパコメント */
+    .papa-comment {
+      background: var(--cream);
+      border: 2px solid var(--cream-dark);
+      border-radius: 16px;
+      padding: 24px;
+      margin: 32px 0;
+      display: flex; gap: 20px; align-items: flex-start;
+    }
+    .papa-comment img { height: 70px; flex-shrink: 0; }
+    .papa-comment .bubble { background: white; border-radius: 12px; padding: 16px 20px; font-size: 0.95rem; line-height: 1.8; position: relative; flex: 1; }
+    .papa-comment .bubble::before { content: '💼 パパより'; display: block; font-size: 0.7rem; font-weight: 700; color: var(--gold); margin-bottom: 8px; }
+
+    /* シェアバー */
+    .share-bar { background: white; border: 2px solid var(--cream-dark); border-radius: 12px; padding: 24px; margin: 40px 0; text-align: center; }
+    .share-bar p { font-size: 0.9rem; color: var(--text-mid); margin-bottom: 16px; }
+    .share-btn { display: inline-block; padding: 10px 24px; border-radius: 8px; font-weight: 700; font-size: 0.9rem; text-decoration: none; margin: 4px; }
+    .share-x { background: #000; color: white; }
+
+    .article-nav { display: flex; justify-content: space-between; margin-top: 40px; }
+    .article-nav a { background: white; border: 2px solid var(--cream-dark); border-radius: 8px; padding: 12px 20px; text-decoration: none; font-size: 0.85rem; color: var(--text-mid); transition: all 0.2s; }
+    .article-nav a:hover { border-color: var(--gold); color: var(--navy); }
+
+    /* ===== SIDEBAR ===== */
+    .sidebar > div { background: white; border-radius: 12px; padding: 24px; margin-bottom: 24px; border: 2px solid var(--cream-dark); }
+    .sidebar > div:first-child { position: sticky; top: 20px; }
+    .sidebar h3 { font-family: 'Noto Serif JP', serif; font-size: 1rem; font-weight: 700; color: var(--navy); border-left: 3px solid var(--gold); padding-left: 12px; margin-bottom: 16px; }
+    .sidebar-cta { background: linear-gradient(135deg, var(--navy-dark), var(--navy)) !important; border-color: var(--navy) !important; }
+    .sidebar-cta h3 { color: var(--gold) !important; border-color: var(--gold) !important; }
+    .sidebar-cta p { color: rgba(255,255,255,0.8); font-size: 0.85rem; line-height: 1.7; margin-bottom: 16px; }
+    .btn { display: block; text-align: center; padding: 12px 20px; border-radius: 8px; font-weight: 700; font-size: 0.9rem; text-decoration: none; margin-bottom: 8px; }
+    .btn-red { background: var(--red); color: white; }
+    .btn-gold { background: var(--gold); color: var(--navy-dark); }
+
+    .toc-list { list-style: none; }
+    .toc-list li { padding: 8px 0; border-bottom: 1px solid var(--cream-dark); font-size: 0.85rem; }
+    .toc-list li:last-child { border-bottom: none; }
+    .toc-list a { color: var(--text-mid); text-decoration: none; }
+    .toc-list a:hover { color: var(--navy); }
+    .toc-list .num { color: var(--gold); font-weight: 700; margin-right: 8px; }
+
+    footer { background: var(--navy-dark); color: rgba(255,255,255,0.6); text-align: center; padding: 40px 20px; border-top: 3px solid var(--gold); }
+    footer .footer-logo { margin-bottom: 16px; }
+    footer .footer-logo img { height: 80px; mix-blend-mode: screen; }
+    footer p { font-size: 0.8rem; line-height: 1.8; margin-bottom: 16px; }
+    footer .footer-links { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 16px; }
+    footer .footer-links a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; }
+    footer .footer-links a:hover { color: var(--gold); }
+    footer .copyright { font-size: 0.75rem; }
+
+    @media (max-width: 768px) {
+      header { padding: 12px 20px; }
+      nav { display: none; }
+      .article-wrap { grid-template-columns: 1fr; }
+      .papa-comment { flex-direction: column; }
+      .sidebar > div:first-child { position: static; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo"><img src="logo2.png" alt="ミリオンクエスト"></a>
+  <nav>
+    <a href="index.html">ホーム</a>
+    <a href="blog.html">ブログ</a>
+    <a href="https://x.com/Million_Quest_" target="_blank">X</a>
+    <a href="https://www.youtube.com/@millionquest" target="_blank">YouTube</a>
+  </nav>
+</header>
+
+<div class="article-wrap">
+<main>
+
+  <!-- ヘッダー -->
+  <div class="article-header">
+    <span class="article-tag">📊 お金の経営学</span>
+    <h1>お金の経営学｜「もったいない」で損していませんか？<br>サンクスコストをやさしく解説</h1>
+    <div class="article-meta">
+      <div class="author">
+        <img src="characters/papa.png" alt="パパ">
+        <span>パパ（勇者）・経営学者</span>
+      </div>
+      <span>2026.04.24</span>
+      <span>読了約8分</span>
+    </div>
+  </div>
+
+  <!-- サムネイル -->
+  <img src="sunk-cost.png" alt="もったいない…やめられない サンクスコスト" class="article-thumbnail">
+
+  <div class="article-body">
+
+    <!-- 導入 -->
+    <p>「もうお金を払ってしまったから、やめるのはもったいない」</p>
+    <p>そんなふうに思ったことはありませんか？</p>
+
+    <ul class="check-list warn">
+      <li>使っていないサブスク</li>
+      <li>行かなくなったジム</li>
+      <li>途中でやめたい習い事</li>
+    </ul>
+
+    <p>本当はやめた方がいいと分かっているのに、なぜか続けてしまう。</p>
+    <p>これは<strong>意志が弱いからではありません。</strong></p>
+
+    <div class="arrow-point">👉 人間の自然な心理です</div>
+
+    <p>そして経営学では、この現象を<br>
+    <strong>「サンクスコスト（埋没費用）」</strong>と呼びます。</p>
+
+    <!-- 漫画 -->
+    <div class="manga-section">
+      <p class="manga-label">🎮 COMIC</p>
+      <h3>日常の中のサンクスコスト</h3>
+      <img src="sunk-cost-manga.png" alt="サンクスコスト 家族漫画 10コマ">
+    </div>
+
+    <!-- サンクスコストとは -->
+    <h2 class="section-heading" id="what">🧠 サンクスコストとは？</h2>
+
+    <p>サンクスコストとは👇</p>
+
+    <div class="arrow-point">👉 すでに支払ってしまい、もう取り戻せないお金や時間のこと</div>
+
+    <p>例えば…</p>
+    <ul class="check-list warn">
+      <li>入会したけど行っていないジム代</li>
+      <li>途中でやめたい習い事の月謝</li>
+      <li>買ったけど読んでいない本</li>
+    </ul>
+
+    <p>これらはすべて👇</p>
+
+    <div class="arrow-point red-bg">👉 すでに失われたコスト</div>
+
+    <!-- なぜ判断を間違えるのか -->
+    <h2 class="section-heading" id="why">❌ なぜ判断を間違えるのか？</h2>
+
+    <p>問題はここです👇</p>
+
+    <div class="arrow-point red-bg">👉 「もったいない」という感情が判断を狂わせる</div>
+
+    <p>本来、意思決定はこうあるべきです👇</p>
+
+    <div class="arrow-point">👉 これからどうするのが一番得か？</div>
+
+    <p>でも実際は👇</p>
+
+    <div class="callout red" data-label="⚠️ 間違った判断">
+      「せっかく払ったから続ける」という選択をしてしまう
+    </div>
+
+    <!-- 危険性 -->
+    <h2 class="section-heading" id="danger">⚠️ サンクスコストの危険性</h2>
+
+    <p>この思考を続けると👇</p>
+
+    <ul class="check-list bad">
+      <li>不要な支出が増える</li>
+      <li>時間を無駄にする</li>
+      <li>本当にやりたいことができなくなる</li>
+    </ul>
+
+    <p>つまり👇</p>
+
+    <div class="arrow-point red-bg">👉 "もったいない"がさらに損を生む</div>
+
+    <!-- 経営学的な本質 -->
+    <h2 class="section-heading" id="business">💡 経営学的な本質</h2>
+
+    <p>ここが一番大事👇</p>
+
+    <div class="arrow-point">👉 過去のコストは意思決定に含めてはいけない</div>
+
+    <p>企業の経営でも同じです。例えば👇</p>
+
+    <ul class="check-list bad">
+      <li>失敗しそうな事業に投資し続ける</li>
+      <li>回収できないプロジェクトをやめられない</li>
+    </ul>
+
+    <p>これもすべて👇</p>
+
+    <div class="arrow-point red-bg">👉 サンクスコストの罠</div>
+
+    <!-- どうすればいい -->
+    <h2 class="section-heading" id="how">🔄 ではどうすればいい？</h2>
+
+    <p>答えはシンプルです👇</p>
+
+    <div class="callout green" data-label="✔ 判断基準を変える">
+      <strong style="font-size:1.05rem;">「今から始めるとして、それでもやるか？」</strong><br>
+      <span style="font-size:0.9rem; color:var(--text-mid);">これだけを基準に判断する</span>
+    </div>
+
+    <p>使っていないサブスクなら👉「今から新規契約するか？」<br>
+    行かないジムなら👉「今から新しく入会するか？」</p>
+
+    <p>「NO」なら、<strong>今すぐやめるのが正解</strong>です。</p>
+
+    <!-- 悪なのか -->
+    <h2 class="section-heading" id="good">🟢 サンクスコストは"悪"なのか？</h2>
+
+    <p>実はそうでもありません。使い方によっては👇</p>
+
+    <div class="arrow-point gold-bg">👉 強力な武器にもなる</div>
+
+    <ul class="check-list">
+      <li>ジムを先に払う → 行くようになる</li>
+      <li>投資を積立にする → 続けられる</li>
+    </ul>
+
+    <div class="arrow-point">👉 「やりたいことを続けるため」に使うならOK</div>
+
+    <!-- まとめ -->
+    <div class="summary-box">
+      <p class="sum-label">🎯 まとめ</p>
+      <p class="sum-text">サンクスコストは<br>敵にも味方にもなる</p>
+    </div>
+
+    <!-- 最後に -->
+    <h2 class="section-heading" id="last">🧩 最後に</h2>
+
+    <p>お金の問題の多くは、知識ではなく<strong>「判断のクセ」</strong>にあります。</p>
+    <p>そしてそのクセは👇</p>
+
+    <div class="arrow-point">👉 知るだけで変えられる</div>
+
+    <div class="papa-comment">
+      <img src="characters/papa.png" alt="パパ">
+      <div class="bubble">
+        「過去のコストはもう戻らない。大事なのは、<strong>これからどうするか</strong>だけ。」<br><br>
+        毎月の固定費を一度見直してみてください。「今から始めるとして、それでも続けるか？」と自分に聞くだけで、無駄な出費がすっきり整理できます。浮いたお金をNISAに回せば、複利で増え続けます。
+      </div>
+    </div>
+
+  </div>
+
+  <!-- シェア -->
+  <div class="share-bar">
+    <p>💡 この記事が役に立ったらXでシェアしてください！</p>
+    <a href="https://twitter.com/intent/tweet?text=「もったいない」で損していませんか？サンクスコストをやさしく解説｜ミリオンクエスト%20%23お金の経営学%20%23サンクスコスト&url=https://millionquest.jp/article-sunk-cost.html" target="_blank" class="share-btn share-x">𝕏 Xでシェア</a>
+  </div>
+
+  <div class="article-nav">
+    <a href="blog.html">← ブログ一覧に戻る</a>
+    <a href="blog.html">次の記事 →</a>
+  </div>
+
+</main>
+
+<!-- サイドバー -->
+<aside class="sidebar">
+  <div>
+    <h3>📋 目次</h3>
+    <ul class="toc-list">
+      <li><a href="#what"><span class="num">1</span>サンクスコストとは？</a></li>
+      <li><a href="#why"><span class="num">2</span>なぜ判断を間違えるのか</a></li>
+      <li><a href="#danger"><span class="num">3</span>サンクスコストの危険性</a></li>
+      <li><a href="#business"><span class="num">4</span>経営学的な本質</a></li>
+      <li><a href="#how"><span class="num">5</span>ではどうすればいい？</a></li>
+      <li><a href="#good"><span class="num">6</span>悪なのか？</a></li>
+      <li><a href="#last"><span class="num">7</span>最後に</a></li>
+    </ul>
+  </div>
+
+  <div class="sidebar-cta">
+    <h3>毎朝7時に配信中</h3>
+    <p>お金の経営学を280文字で届けています。フォローして冒険に参加しましょう。</p>
+    <a href="https://x.com/Million_Quest_" target="_blank" class="btn btn-gold">📊 Xをフォロー</a>
+    <a href="https://www.youtube.com/@millionquest" target="_blank" class="btn btn-red">▶ YouTubeで登録</a>
+  </div>
+
+  <div>
+    <h3>著者</h3>
+    <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
+      <img src="characters/papa.png" alt="パパ" style="height:60px;">
+      <div>
+        <div style="font-size:0.75rem; color:var(--gold); font-weight:700;">パパ（勇者）</div>
+        <div style="font-size:0.8rem; color:var(--text-mid);">サラリーマン・経営学者</div>
+      </div>
+    </div>
+    <p style="font-size:0.82rem; color:var(--text-mid); line-height:1.7;">年収400万台・4人家族で資産8,000万円超え。経営学の理論をお金と日常に落とし込んで発信中。</p>
+  </div>
+
+  <div>
+    <h3>関連記事</h3>
+    <div style="font-size:0.85rem; line-height:1.7; color:var(--text-mid);">
+      <p style="padding:10px 0; border-bottom:1px solid var(--cream-dark);">📊 新NISAは「非課税事業部門」だ</p>
+      <p style="padding:10px 0; border-bottom:1px solid var(--cream-dark);">📈 S&P500への投資が最強の理由</p>
+      <p style="padding:10px 0;">🏠 家計をPL・BS・CFで管理する</p>
+    </div>
+  </div>
+</aside>
+</div>
+
+<footer>
+  <div class="footer-logo"><img src="logo2.png" alt="ミリオンクエスト"></div>
+  <p>普通家庭のお金の経営学・冒険チャンネル</p>
+  <div class="footer-links">
+    <a href="index.html">ホーム</a>
+    <a href="blog.html">ブログ</a>
+    <a href="contact.html">お問い合わせ</a>
+    <a href="privacy.html">プライバシーポリシー</a>
+  </div>
+  <p class="copyright">© 2026 MillionQuest. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
