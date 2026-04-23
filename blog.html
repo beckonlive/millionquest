@@ -112,7 +112,7 @@
     }
     .filter-tag:hover, .filter-tag.active { background: var(--navy); color: var(--gold); border-color: var(--navy); }
 
-    /* 記事カード */
+    /* 記事カード（横並び：絵文字サムネ） */
     .article-list { display: flex; flex-direction: column; gap: 24px; }
 
     .article-card {
@@ -121,12 +121,28 @@
       overflow: hidden;
       border: 2px solid var(--cream-dark);
       display: grid;
-      grid-template-columns: 180px 1fr;
+      grid-template-columns: 160px 1fr;
       transition: all 0.3s;
       text-decoration: none;
       color: inherit;
     }
     .article-card:hover { border-color: var(--gold); box-shadow: 0 8px 32px rgba(0,0,0,0.08); transform: translateY(-2px); }
+
+    /* 画像サムネ付きカード：縦型レイアウト */
+    .article-card--img {
+      grid-template-columns: 1fr;
+    }
+    .article-card--img .article-thumb {
+      width: 100%;
+      height: 220px;
+      min-height: unset;
+    }
+    .article-card--img .article-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      padding: 0;
+    }
 
     .article-thumb {
       display: flex;
@@ -135,13 +151,6 @@
       font-size: 3rem;
       min-height: 140px;
       overflow: hidden;
-    }
-    .article-thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      min-height: 140px;
-      padding: 8px;
     }
     .thumb-cat1 { background: linear-gradient(135deg, #1a6b4a, #2d9e6f); }
     .thumb-cat2 { background: linear-gradient(135deg, var(--navy-dark), var(--navy)); }
@@ -264,7 +273,7 @@
     <div class="article-list" id="article-list">
 
       <!-- お金の経営学 -->
-      <a href="article-sunk-cost.html" class="article-card" data-cat="cat1">
+      <a href="article-sunk-cost.html" class="article-card article-card--img" data-cat="cat1">
         <div class="article-thumb thumb-cat1">
           <img src="sunk-cost.png" alt="サンクスコスト記事サムネイル">
         </div>
