@@ -977,12 +977,12 @@
             <p>ママの年収（社会保険扶養内）</p>
           </div>
           <div class="stat-card">
-            <div class="num">4<span>人</span></div>
-            <p>普通の家族で挑戦中</p>
+            <div class="num">15<span>年以上</span></div>
+            <p>資産形成の継続年数</p>
           </div>
           <div class="stat-card">
-            <div class="num">$1<span>M</span></div>
-            <p>目標：1億円（$1Million）</p>
+            <div class="num" id="remaining-stat">—</div>
+            <p>$1Millionまでの距離</p>
           </div>
         </div>
       </div>
@@ -1342,9 +1342,17 @@
       });
     }
 
+    function updateRemainingStat() {
+      const remaining = GOAL_JPY - CURRENT_ASSET_JPY;
+      const man = Math.round(remaining / 10000);
+      const el = document.getElementById('remaining-stat');
+      if (el) el.innerHTML = '残り<span>' + man.toLocaleString() + '万</span>';
+    }
+
     window.addEventListener('load', () => {
       updateTracker();
       updateCharLevels();
+      updateRemainingStat();
     });
   </script>
 
