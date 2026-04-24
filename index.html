@@ -409,10 +409,10 @@
       font-family: 'Noto Serif JP', serif;
       font-size: 2rem;
       font-weight: 900;
-      color: var(--navy);
+      color: var(--red);
     }
 
-    .stat-card .num span { color: var(--red); font-size: 1.2rem; }
+    .stat-card .num span { color: var(--navy); font-size: 1.2rem; }
     .stat-card p { font-size: 0.8rem; color: var(--text-mid); margin-top: 4px; }
 
     /* ========== お金の経営学 ========== */
@@ -1346,7 +1346,7 @@
       const remaining = GOAL_JPY - CURRENT_ASSET_JPY;
       const man = Math.round(remaining / 10000);
       const el = document.getElementById('remaining-stat');
-      if (el) el.innerHTML = '残り<span>' + man.toLocaleString() + '万</span>';
+      if (el) el.innerHTML = man.toLocaleString() + '<span>万　残り</span>';
     }
 
     window.addEventListener('load', () => {
