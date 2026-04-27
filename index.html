@@ -1362,7 +1362,7 @@
       const remaining = GOAL_JPY - CURRENT_ASSET_JPY;
       const man = Math.round(remaining / 10000);
       const el = document.getElementById('remaining-stat');
-      if (el) el.innerHTML = man.toLocaleString() + '<span>万　残り</span>';
+      if (el) el.innerHTML = '<span>残り</span>' + man.toLocaleString() + '<span>万</span>';
     }
 
     window.addEventListener('load', () => {
